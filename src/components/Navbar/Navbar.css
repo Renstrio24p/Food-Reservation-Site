@@ -1,0 +1,52 @@
+
+:where(nav,
+        .left,
+        .right,
+        .right ul){
+    display: flex;
+    align-items: center;
+}
+
+
+
+nav {
+    justify-content: space-between;
+    width: 100%;
+    padding: 1% 6%;
+    position: fixed;
+    z-index: 999;
+}
+
+nav.scroll {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.left {
+    gap: 1rem;
+}
+
+.left img {
+    width: 55px;
+    border-radius: 50%;
+}
+
+.left p {
+    font-weight: 500;
+}
+
+.left p:first-child {
+    color: red;
+}
+
+.right ul {
+    gap: 2rem;
+    margin-right: 2rem;
+}
+
+.right button {
+    padding: 5px 20px;
+    border: 1.5px solid red;
+    background: transparent;
+    outline: none;
+    border-radius: 50px;
+}
