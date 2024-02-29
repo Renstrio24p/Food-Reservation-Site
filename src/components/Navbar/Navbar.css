@@ -51,6 +51,10 @@ nav.scroll {
     border-radius: 50px;
 }
 
+.right ul li a {
+    color: black;
+}
+
 nav .bx-menu {
     display: none;
     font-size: 22px;

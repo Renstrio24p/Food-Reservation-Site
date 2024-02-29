@@ -4,7 +4,6 @@ import './Categories.css';
 export default function Categories(DOM: HTMLDivElement) {
     let filteredData = sliderData;
 
-    // Set up initial HTML structure
     DOM.innerHTML = (`
         <h4>Categories</h4>
         <div class='options'>
