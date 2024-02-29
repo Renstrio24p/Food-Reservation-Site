@@ -21,6 +21,7 @@
     "dompurify": "^3.0.9",
     "esbuild-copy-static-files": "^0.1.0",
     "esbuild-plugin-inline-image": "^0.0.9",
+    "typeface-dancing-script": "^1.1.13",
     "typeface-poppins": "^1.1.13"
   }
 }

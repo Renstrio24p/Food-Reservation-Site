@@ -12,6 +12,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom-left-radius: 40%;
+    position: relative;
+}
+
+.hero-section .iphone {
+    position: absolute;
+    width: 500px;
+    right: 20px;
+    bottom: -80px;
+    z-index: 1; 
 }
 
 .hero-section :where(h2,p){
@@ -169,5 +178,37 @@
     font-size: 14px;
 }
 
+/* Media Queries */
 
+@media screen and (max-width: 900px) {
 
+    .hero-section h2,
+    .hero-section p {
+        font-size: 40px;
+    }
+
+    .iphone {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hero-section {
+        text-align: center;
+        transition: 1s;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .hero-section {
+        line-height: 2rem;
+    }
+
+    .hero-section h2,
+    .hero-section p {
+        font-size: 30px;
+    }
+    
+}

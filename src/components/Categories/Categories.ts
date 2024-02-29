@@ -33,7 +33,7 @@ export default function Categories(DOM: HTMLDivElement) {
         cardsContainer.innerHTML = data.map((item, id) => `
             <div key='${id}' class='card'>
                 <div class='food-img'>
-                    <img src='/${item.image}.png' alt='food image' />
+                    <img src='/${item.image}' alt='food image' />
                     <p>${item.category}</p>
                 </div>
                 <div class='info'>
@@ -44,10 +44,9 @@ export default function Categories(DOM: HTMLDivElement) {
                 </div>
             </div>
         `).join('');
-        cardsContainer.style.scrollBehavior = 'smooth'; // Add smooth scrolling behavior
+        cardsContainer.style.scrollBehavior = 'smooth'; 
     };
 
-    // Render initial cards with all categories selected
     renderCards(sliderData);
 
     const slideLeft = document.getElementById('slide-left') as HTMLElement;

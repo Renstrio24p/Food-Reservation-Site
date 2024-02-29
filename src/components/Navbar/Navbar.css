@@ -50,3 +50,33 @@ nav.scroll {
     outline: none;
     border-radius: 50px;
 }
+
+nav .bx-menu {
+    display: none;
+    font-size: 22px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 850px){
+
+    .right ul {
+        font-size: 12px;
+        margin-right: 0.5rem;
+        gap: 1rem;
+    }
+
+}
+
+@media screen and (max-width:635px) {
+    
+    .right {
+        display: none;
+    }
+
+    nav .bx-menu {
+        display: block;
+    }
+
+}

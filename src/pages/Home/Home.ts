@@ -13,7 +13,8 @@ export default function Home(DOM: HTMLDivElement) {
             <div>
                 <button>Order Now</button>
                 <button>View More</button>
-            </div>       
+            </div> 
+            <img class='iphone' src='/iphone-app.png' alt='iphone' />      
         </div>
         <h2 class='menu-h2'>Menu</h2>
         <div class='slider'>

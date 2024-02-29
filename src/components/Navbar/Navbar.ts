@@ -12,14 +12,15 @@ export default function Navbar(DOM: HTMLDivElement) {
      </div>
      <div class='right'>
         <ul>
-            <li>Home</li>
-            <li>Menu</li>
-            <li>Categories</li>
-            <li>About us</li>
-            <li>Contact</li>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/menu'>Menu</a></li>
+            <li><a href='/menu'>Categories</a></li>
+            <li><a href='/menu'>About us</a></li>
+            <li><a href='/menu'>Contact</a></li>
         </ul>
         <button>login</button>
-     </div>
+    </div>
+        <p class='bx bx-menu'></p>
   `)
 
   const navbar = document.querySelector('nav') as HTMLDivElement;

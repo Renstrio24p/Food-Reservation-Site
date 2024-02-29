@@ -696,6 +696,11 @@ toidentifier@1.0.1:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
 
+typeface-dancing-script@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-dancing-script/-/typeface-dancing-script-1.1.13.tgz#3a1f6fc86e65f8b04e582584b3624b929fb11914"
+  integrity sha512-5Kqm32BgbxpiNlz3Ni2dYCb86lRauCJKMSTa/XHAwGWXs9SyvlP9kGoDPajVXP6nWfTgX07icPcCe13pEHDY2Q==
+
 typeface-poppins@^1.1.13:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/typeface-poppins/-/typeface-poppins-1.1.13.tgz#a80b6f14a2a70624eb2eb833fe5559507a8f5651"

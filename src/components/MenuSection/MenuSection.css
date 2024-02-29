@@ -1,0 +1,102 @@
+.dish-menu {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.dish-menu h2 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 40px;
+}
+
+.dish-menu .menu-title {
+    font-size: 25px;
+}
+
+.dish-menu .desc {
+    font-family: 'Dancing Script', cursive;
+    font-size: 14px;
+}
+
+.breakfast-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    place-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    background-color: #ebe8e8;
+    padding: 2rem;
+}
+
+.breakfast-content .menu-card {
+    width: 100%; 
+    max-width: 320px; 
+    text-align: left;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu-card .image-content {
+    width: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 40%;
+    height: 200px;
+    position: relative;
+}
+
+.image-content img {
+    width: 100%;
+}
+
+.image-content .category {
+    top: 10px;
+    position: absolute;
+    background-color: white;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.breakfast-content .rating {
+    margin-top: 0.6rem;
+    padding-left: 10px;
+}
+
+.breakfast-content h3 {
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.breakfast-content p {
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.menu-action {
+    margin: 20px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-action button {
+    width: 120px;
+    padding: 5px 2%;
+    font-size: 14px;
+    background-color: rgb(29, 40, 40);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.menu-action p {
+    font-size: 22px;
+}

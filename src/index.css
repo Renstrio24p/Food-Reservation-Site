@@ -17,4 +17,5 @@ html {
 body {
     width: 100%;
     height: fit-content;
+    scroll-behavior: smooth;
 }

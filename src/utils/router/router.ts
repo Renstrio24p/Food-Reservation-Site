@@ -1,7 +1,7 @@
 
 import NotFound from "../../pages/404/NotFound";
 import Home from "../../pages/Home/Home";
-import Main from "../../pages/Main/Main";
+import Menu from "../../pages/Menu/Menu";
 import { TSRouter } from "./class/router.class";
 
 export const Routes = (DOM: HTMLDivElement) => {
@@ -11,8 +11,8 @@ export const Routes = (DOM: HTMLDivElement) => {
             element: ()=> Home(DOM!),
         },
         {
-            path: '/main',
-            element: ()=> Main(DOM)
+            path: '/menu',
+            element: ()=> Menu(DOM),
         },
         {
             path: '*',

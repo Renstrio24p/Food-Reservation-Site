@@ -1,3 +1,4 @@
+import Footer from "./components/Footer/Footer"
 import Navbar from "./components/Navbar/Navbar"
 import { Routes } from "./utils/router/router"
 import { scriptElement } from "./utils/sanitizer/domSanitizer"
@@ -8,6 +9,7 @@ export default function Start(DOM: HTMLDivElement) {
         <div>
             <nav id='navbar'></nav>
             <div id='router'></div>
+            <footer id='footer'></footer>
         </div>
     `)
 
@@ -18,5 +20,10 @@ export default function Start(DOM: HTMLDivElement) {
     const routes = document.getElementById('router') as HTMLDivElement
     routes.appendChild(scriptElement)
     Routes(routes)
+
+    const footer = document.getElementById('footer') as HTMLDivElement
+    footer.appendChild(scriptElement)
+    Footer(footer)
+
 
 }

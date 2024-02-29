@@ -4,11 +4,13 @@ import imagePlugin from 'esbuild-plugin-inline-image'
 import copy from 'esbuild-copy-static-files'
 
 const Server = ()=>{
-    const liveParams = { root: 'dist', port: 4650, host: 'localhost', file: 'index.html', fallback: 'index.html'}
+    const liveParams = { root: 'dist', port: 4650, host: 'localhost', file: 'index.html', fallback: 'index.html',  headers: {
+        'Content-Security-Policy': "default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://food-reservation.vercel.app/ http://localhost:4650"
+    }}
     LiveServer.start(liveParams)
 }
 const EsbuildOptions = {
-        entryPoints:['src/index.ts','index.html'],
+        entryPoints:['src/index.ts','index.html','src/**/*.ts'],
         outdir: 'dist',
         bundle: true,
         minify: true,
@@ -25,9 +27,11 @@ const EsbuildOptions = {
             '.woff2': 'file',
             '.eot': 'file',
             '.ttf': 'file',
-            '.jpg': 'copy'
+            '.jpg': 'copy',
+            '.webp': 'copy',
+            '.avif': 'copy'
         },
-        external: ['/*.png','/*.jpg'],
+        external: ['/*.png','/*.jpg','/*.webp'],
         plugins: [
             imagePlugin(),
             copy({
