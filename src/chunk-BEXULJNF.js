@@ -1,4 +1,4 @@
-import{a as o}from"./chunk-SGPTNVIP.js";import{a as c}from"./chunk-ZAFPVDX4.js";import{a as p}from"./chunk-OHAPQNDR.js";import{a as l}from"./chunk-WVWAKTLP.js";import{c as d}from"./chunk-TFW3BQFA.js";d();function g(t){t.innerHTML=`
+import{a as o}from"./chunk-ZJ2HDYVA.js";import{a as c}from"./chunk-DI35Q25O.js";import{a as p}from"./chunk-F7U257LC.js";import{a as l}from"./chunk-PKX4QZU4.js";import{c as d}from"./chunk-LRCXJZIL.js";d();function g(t){t.innerHTML=`
         <div class='hero-section'>
             <h2><span>Pot</span>session <span>in Tuao<span></h2>
             <p>Cagayan</p> 
@@ -16,7 +16,7 @@ import{a as o}from"./chunk-SGPTNVIP.js";import{a as c}from"./chunk-ZAFPVDX4.js";
                     ${l.map((e,h)=>`
                                 <div key='${h}' class='card'>
                                     <div class='food-img'>
-                                        <img src='/${e.image}.png' alt='food image' />
+                                        <img src='/${e.image}' alt='food image' />
                                     </div>
                                     <div class='info'>
                                         <h3>${e.title}</h3>

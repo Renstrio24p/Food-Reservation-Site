@@ -1,4 +1,4 @@
-import{c as e}from"./chunk-TFW3BQFA.js";e();function s(t){t.innerHTML=`
+import{c as e}from"./chunk-LRCXJZIL.js";e();function s(t){t.innerHTML=`
     <div class='footer-content'>
         <div class='col'>
             <div class='logo-container'>

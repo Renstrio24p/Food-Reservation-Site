@@ -1,1 +1,1 @@
-import{a}from"../../chunk-WVWAKTLP.js";import"../../chunk-TFW3BQFA.js";export{a as sliderData};
+import{a}from"../../chunk-PKX4QZU4.js";import"../../chunk-LRCXJZIL.js";export{a as sliderData};
