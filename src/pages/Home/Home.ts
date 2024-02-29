@@ -25,7 +25,7 @@ export default function Home(DOM: HTMLDivElement) {
         `
                                 <div key='${id}' class='card'>
                                     <div class='food-img'>
-                                        <img src='/${item.image}.png' alt='food image' />
+                                        <img src='/${item.image}' alt='food image' />
                                     </div>
                                     <div class='info'>
                                         <h3>${item.title}</h3>
