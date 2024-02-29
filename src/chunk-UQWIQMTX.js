@@ -1,0 +1,1 @@
+import{a as o}from"./chunk-DPVZ42A7.js";import{a as m}from"./chunk-CXC45BZ6.js";import{a as r}from"./chunk-P6GKFSM7.js";import{a as n}from"./chunk-SFFTYL67.js";import{c as t}from"./chunk-TFW3BQFA.js";t();var h=e=>{new n([{path:"/",element:()=>m(e)},{path:"/menu",element:()=>r(e)},{path:"*",element:()=>o(e)}]).navigate("")};export{h as a};
