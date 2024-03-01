@@ -13,6 +13,7 @@
     background-repeat: no-repeat;
     border-bottom-left-radius: 40%;
     position: relative;
+    background-attachment: fixed;
 }
 
 .hero-section .iphone {
@@ -179,6 +180,28 @@
 }
 
 /* Media Queries */
+
+@media screen and (min-width:1920px) {
+    
+    .hero-section h2,
+    .hero-section p {
+        font-size: 90px;
+    }
+
+    .hero-section {
+        line-height: 5rem;
+    }
+
+    .hero-section button {
+        font-size: 25px;
+    }
+
+    .hero-section .iphone {
+        width: 700px;
+        bottom: -120px;
+    }
+
+}
 
 @media screen and (max-width: 900px) {
 

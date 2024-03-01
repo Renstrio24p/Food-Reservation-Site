@@ -1,0 +1,154 @@
+:root {
+    --about: url('/hotsilog.webp')
+}
+
+.about-hero {
+    background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.82) 30%, rgba(0,0,0,0.2) 55%),var(--about);
+    width: 100%;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s ease;
+}
+
+.about-hero h1 {
+    font: 120px 'Dancing Script', cursive;
+    color: white;
+}
+
+.about-hero p {
+    font-size: 22px;
+    color: white;
+}
+
+.about-book {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    animation: fadeInUp 1s ease;
+}
+
+.about-book :where(.book-left,.book-right){
+    flex: 1;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+
+.book-left {
+    position: relative;
+    border-right: 1px solid #ccc;
+}
+
+.book-left h2 {
+    position: absolute;
+    font-size: 40px;
+    top: 0;
+    font: 60px 'Dancing Script', cursive;
+}
+
+.book-left h3 {
+    margin-left: 2.5rem;
+}
+
+.about-book :where(.book-left,.book-right) p {
+    font-size: 12px;
+    padding: 10px;
+    opacity: 0.8;
+}
+
+.about-book .book-left p {
+    margin-left: 3rem;
+}
+
+.about-book .book-right p {
+    margin-right: 3rem;
+}
+
+.reserve {
+    position: relative;
+}
+
+.about-book button {
+    position: absolute;
+    bottom: -40px;  
+    left: 50%; 
+    transform: translateX(-50%); 
+    padding: 10px;
+    border-radius: 1rem;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 12px;
+    cursor: pointer;
+    color: rgb(61, 61, 61);
+}
+.about-book button:hover {
+    bottom: -30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Media Queries */
+
+@media screen and (min-width:1920px) {
+    
+    .book-left h2 {
+        font-size: 80px;
+    }
+
+    .book-left h3 {
+        font-size: 25px;
+        margin-left: 2em;
+    }
+
+    .about-book button {
+        font-size: 18px;
+    }
+
+    .about-book :where(.book-left,.book-right) p {
+        font-size: 18px;
+    }
+
+}
+
+
+@media screen and (max-width: 683px) {
+    
+    .about-hero {
+        height: 300px;
+    }
+
+    .about-hero h1 {
+        font-size: 80px;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+
+    .about-book {
+        flex-direction: column;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .about-book .book-left p {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .about-book .book-right p {
+        margin-right: 10px;
+        margin-left: 0;
+    }
+    
+    .book-right {
+        margin-top: 0;
+    }
+
+}

@@ -50,6 +50,7 @@
 
 .food-img {
     border-bottom-right-radius: 60%;
+    height: 180px;
 }
 
 .categories .food-img p {
@@ -60,4 +61,38 @@
     padding: 2px 5px;
     border-radius: 5px;
     font-size: 12px;
+}
+
+/* Media Queries */
+
+
+@media screen and (max-width:1920px) {
+    
+    .card .food-img p {
+        font-size: 20px;
+    }
+
+    .options button {
+        font-size: 25px;
+    }
+    
+    .categories .card {
+        max-width: 450px;
+    }
+
+    .card .info h3 {
+        font-size: 25px;
+    }
+    .card .info p {
+        font-size: 18px;
+    }
+    
+}
+
+@media screen and (max-width:800px) {
+    
+    .options button {
+        font-size: 14px;
+    }
+
 }

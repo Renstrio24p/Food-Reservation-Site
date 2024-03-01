@@ -63,6 +63,29 @@ nav .bx-menu {
     border-radius: 5px;
 }
 
+/* Media Queries */
+
+@media screen and (min-width:1920px) {
+    
+    .left img {
+        width: 75px;
+    }
+
+    .left p {
+        font-size: 25px;
+    }
+
+    .right ul li a {
+        font-size: 25px;
+    }
+
+    .right button {
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+
+}
+
 @media screen and (max-width: 850px){
 
     .right ul {
@@ -76,11 +99,31 @@ nav .bx-menu {
 @media screen and (max-width:635px) {
     
     .right {
+        animation: fadeOutRight 1s ease;
         display: none;
     }
 
     nav .bx-menu {
         display: block;
+    }
+
+    .right.collapse {
+        display: flex;
+        width: 240px;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: white;
+        flex-direction: column;
+        animation: fadeInRight 1s ease;
+    }
+
+    .right.collapse ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 85px 0;
     }
 
 }

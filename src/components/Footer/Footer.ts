@@ -13,8 +13,8 @@ export default function Footer(DOM: HTMLDivElement) {
                 </div>
             </div>
             <div class='input-content'>
-                <p class='placer'>Your Email</p>
-                <input type='email' id='email' name='email'/>
+                <label class='placer' for='email'>Your Email</label>
+                <input type='email' class='email' id='email' name='email'/>
             </div>
             <button>Subscribe</button>
         </div>
@@ -43,7 +43,7 @@ export default function Footer(DOM: HTMLDivElement) {
   `;
 
   const placeholder = document.querySelector('.placer') as HTMLParagraphElement;
-  const inputField = document.querySelector('#email') as HTMLInputElement;
+  const inputField = document.querySelector('.email') as HTMLInputElement;
 
   inputField.addEventListener('focus', () => {
     placeholder.classList.add('active');

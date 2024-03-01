@@ -54,8 +54,33 @@
     background: linear-gradient(0deg, rgb(255, 255, 255) 20%, rgba(249, 249, 249, 0.29) 55%); 
 }
 
+@media screen and (min-width: 1920px) {
+    
+    .about-left p {
+        font-size: 18px;
+    }
 
+    .about-left button {
+        font-size: 25px;
+    }
 
+}
+
+@media screen and (max-width: 800px) {
+    
+    .about-section .about-content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
 
 
 

@@ -31,14 +31,14 @@ const EsbuildOptions = {
             '.webp': 'copy',
             '.avif': 'copy'
         },
-        external: ['/*.png','/*.jpg','/*.webp'],
+        external: ['/*.png','/*.jpg','/*.webp','/*.avif'],
         plugins: [
             imagePlugin(),
             copy({
                 src: './src/images',
                 dest: './dist',
                 recursive: true,
-              })
+              }),
         ],
         define: { 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'), 'process.env': JSON.stringify(process.env) },
     }

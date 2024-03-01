@@ -1,0 +1,16 @@
+
+.category-page {
+    padding: 80px 0 40px;
+    display: flex;
+    animation: fadeIn 1s ease;
+}
+
+/* Media Queries */
+
+@media screen and (min-width:1920px) {
+    
+    .category-page {
+        padding: 120px 0 40px; 
+    }
+
+}

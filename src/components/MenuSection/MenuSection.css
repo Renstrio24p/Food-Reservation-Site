@@ -52,6 +52,7 @@
 
 .image-content img {
     width: 100%;
+    height: 100%;
 }
 
 .image-content .category {
@@ -99,4 +100,40 @@
 
 .menu-action p {
     font-size: 22px;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1920px) {
+    .dish-menu h2 {
+        font-size: 80px;
+    }
+
+    .dish-menu .menu-title {
+        font-size: 35px;
+    }
+
+    .dish-menu .desc {
+        font-size: 25px;
+    }
+
+    .image-content p {
+        font-size: 18px;
+    }
+
+    .menu-card h3 {
+        font-size: 20px;
+    }
+
+    .menu-card p {
+        font-size: 18px;
+    }
+
+    .menu-action button {
+        font-size: 20px;
+    }
+
+    .menu-action p {
+        font-size: 18px;
+    }
 }
