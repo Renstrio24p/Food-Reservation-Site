@@ -1,4 +1,4 @@
-import{a as o}from"./chunk-SN6ZQO4Q.js";import{a as l}from"./chunk-SMSZBL52.js";import{a as p}from"./chunk-ZJJ7SU65.js";import{a as c}from"./chunk-EC4WAU3C.js";import{c as a}from"./chunk-ZU2QHGT7.js";a();function g(t){t.innerHTML=`
+import{a as o}from"./chunk-V3GFDQFD.js";import{a as l}from"./chunk-SMSZBL52.js";import{a as p}from"./chunk-ZJJ7SU65.js";import{a as c}from"./chunk-EC4WAU3C.js";import{c as a}from"./chunk-ZU2QHGT7.js";a();function g(t){t.innerHTML=`
         <div class='hero-section'>
             <h2><span>Pot</span>session <span>in Tuao<span></h2>
             <p>Cagayan</p> 
