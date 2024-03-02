@@ -1,0 +1,48 @@
+:root {
+    --bulalo: url('/bulalo-login.avif');
+    --pizza: url('/pizza1.avif')
+}
+
+.login-page {
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.82) 20%, rgba(0,0,0,0.2) 55%),var(--bulalo);
+    z-index: 9;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: fadeIn 0.5s ease;
+    display: grid;
+    place-items: center;
+}
+
+nav.text-white {
+    color: white;
+}
+
+nav.text-white ul li a {
+    color: white;
+}
+
+nav.text-white button {
+    color: white;
+}
+
+.login-content {
+    background-color: white;
+    max-width: 500px;
+    display: flex;
+    height: 200px;
+    gap: 10px;
+}
+
+.login-content .login-left {
+    flex: 1;
+    padding: 10px;
+}
+
+.login-right {
+    flex: 1;
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.82) 20%, rgba(0,0,0,0.2) 55%),var(--pizza);
+    height: 100%;
+}

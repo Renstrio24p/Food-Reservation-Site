@@ -235,3 +235,21 @@
     }
     
 }
+
+@media screen and (max-width:451px) {
+    
+    .slider i {
+        display: none;
+    }
+
+    .slider .slider-slides .cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .slider-slides {
+        overflow-y: scroll;
+        height: fit-content;
+    }
+
+}

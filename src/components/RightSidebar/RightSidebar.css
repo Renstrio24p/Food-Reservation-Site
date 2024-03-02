@@ -17,7 +17,7 @@
 }
 
 .account-tier h2 {
-    font: 30px 'Dancing Script', cursive;
+    font: 30px 'Dancing Script';
     margin-bottom: 1rem;
 }
 
@@ -144,11 +144,11 @@
 
 .banner p {
     font-size: 42px;
-    font: 42px 'Dancing Script', cursive;
+    font: 42px 'Dancing Script';
 }
 
 .banner h3, .banner h4 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script';
     font-size: 40px;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .banner h5 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script';
     font-size: 65px;
     margin-top: 1rem;
 }

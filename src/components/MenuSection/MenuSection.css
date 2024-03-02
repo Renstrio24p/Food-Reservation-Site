@@ -5,7 +5,7 @@
 }
 
 .dish-menu h2 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script';
     text-align: center;
     font-size: 40px;
 }
@@ -15,7 +15,7 @@
 }
 
 .dish-menu .desc {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script';
     font-size: 14px;
 }
 
