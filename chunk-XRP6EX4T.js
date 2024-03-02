@@ -1,4 +1,4 @@
-import{a as t}from"./chunk-TKGTIDG2.js";import{c}from"./chunk-TFW3BQFA.js";c();function p(d){let o=t.filter(e=>e.collection==="appetizer"),r=t.filter(e=>e.collection==="soup"),n=t.filter(e=>e.collection==="pizza"),s=t.filter(e=>e.collection==="desserts"),i=e=>e.map((a,l)=>`
+import{a as t}from"./chunk-EC4WAU3C.js";import{c}from"./chunk-ZU2QHGT7.js";c();function p(d){let o=t.filter(e=>e.collection==="appetizer"),r=t.filter(e=>e.collection==="soup"),n=t.filter(e=>e.collection==="pizza"),s=t.filter(e=>e.collection==="desserts"),i=e=>e.map((a,l)=>`
                 <div key=${l} class='collection-card'>
                     <div class='collection-image'>
                         <img src='${a.image}' alt='collection' />

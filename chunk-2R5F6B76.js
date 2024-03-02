@@ -1,4 +1,4 @@
-import{c as e}from"./chunk-TFW3BQFA.js";e();function t(o){return o.innerHTML=`
+import{c as e}from"./chunk-ZU2QHGT7.js";e();function t(o){return o.innerHTML=`
     <div class='about-hero'>
         <div>
             <h1>About</h1>

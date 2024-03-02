@@ -1,4 +1,4 @@
-import{c as r}from"./chunk-TFW3BQFA.js";r();function a(i){i.innerHTML=`
+import{c as r}from"./chunk-ZU2QHGT7.js";r();function a(i){i.innerHTML=`
       <div class='account-tier'>
          <a herf='/login'>Account</a>
          <h2>Food Reservation</h2>

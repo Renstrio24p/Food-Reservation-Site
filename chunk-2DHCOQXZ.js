@@ -1,4 +1,4 @@
-import{c as t}from"./chunk-TFW3BQFA.js";t();function e(i){i.innerHTML=`
+import{c as t}from"./chunk-ZU2QHGT7.js";t();function e(i){i.innerHTML=`
             <div>
                 <h1>Cart</h1>
             </div>

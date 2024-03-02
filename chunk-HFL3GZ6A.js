@@ -1,4 +1,4 @@
-import{a as i}from"./chunk-TKGTIDG2.js";import{c as a}from"./chunk-TFW3BQFA.js";a();function l(s){let r=i.filter(e=>e.category==="breakfast"),o=i.filter(e=>e.category==="lunch"),d=i.filter(e=>e.category==="dinner"),c=i.filter(e=>e.category==="desserts");function n(e){return e.map((t,p)=>`
+import{a as i}from"./chunk-EC4WAU3C.js";import{c as a}from"./chunk-ZU2QHGT7.js";a();function l(s){let r=i.filter(e=>e.category==="breakfast"),o=i.filter(e=>e.category==="lunch"),d=i.filter(e=>e.category==="dinner"),c=i.filter(e=>e.category==="desserts");function n(e){return e.map((t,p)=>`
             <div key=${p} class='menu-card'>
                 <div class='image-content'>
                     <img src='/${t.image}' alt='dish image' />

@@ -1,4 +1,4 @@
-import{c as t}from"./chunk-TFW3BQFA.js";t();function e(o){o.innerHTML=`
+import{c as t}from"./chunk-ZU2QHGT7.js";t();function e(o){o.innerHTML=`
     <div class='about-section'>
       <h3>About Us</h3>
       <div class='about-content'>

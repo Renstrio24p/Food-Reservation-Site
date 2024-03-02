@@ -1,4 +1,4 @@
-import{c as r}from"./chunk-TFW3BQFA.js";r();function o(a){a.innerHTML=`
+import{c as r}from"./chunk-ZU2QHGT7.js";r();function o(a){a.innerHTML=`
     <div class='left'>
       <img src='/food.png' alt='food' />
       <div>
