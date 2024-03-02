@@ -1,7 +1,8 @@
 import * as esbuild from 'esbuild'
+// @ts-ignore
 import LiveServer from 'alive-server'
 import imagePlugin from 'esbuild-plugin-inline-image'
-import copy from 'esbuild-copy-static-files'
+import copy, { CopyStaticFilesPluginInstance } from 'esbuild-copy-static-files'
 
 const generateNonce = () => {
     const nonceLength = 32; 
@@ -13,7 +14,7 @@ const generateNonce = () => {
     return nonce;
 };
 
-const Server = (nonce) => {
+const Server = () => {
     const liveParams = {
         root: 'dist',
         port: 4650,
@@ -21,7 +22,7 @@ const Server = (nonce) => {
         file: 'index.html',
         fallback: 'index.html',
         headers: {
-            'Content-Security-Policy': `default-src 'self'; script-src 'self' 'nonce-${nonce}'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://food-reservation.vercel.app/ sha256-<hFiMacGS/DT3jfBPaCojQ22ArBEbw5Nsd1jMxzuMLNE=>`
+            'Content-Security-Policy': `default-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://food-reservation.vercel.app/ sha256-<hFiMacGS/DT3jfBPaCojQ22ArBEbw5Nsd1jMxzuMLNE=>`
         }
     };
     LiveServer.start(liveParams);
@@ -34,6 +35,7 @@ const EsbuildOptions = {
         allowOverwrite: true,
         minify: true,
         splitting: true,
+        
         format: 'esm',
         minifyWhitespace: true,
         // sourcemap: true,
@@ -52,26 +54,29 @@ const EsbuildOptions = {
         },
         external: ['/*.png','/*.jpg','/*.webp','/*.avif'],
         plugins: [
+            //@ts-ignore
             imagePlugin(),
+            //@ts-ignore
             copy({
                 src: './src/images',
                 dest: './dist',
                 recursive: true,
-              }),
+              }) ,
         ],
+        tsconfig: 'tsconfig.json',
         define: { 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'), 'process.env': JSON.stringify(process.env) },
     }
 
     if(process.argv.includes('--build')){
         const now = Date.now()
-        await esbuild.build(EsbuildOptions).catch(() => {
+        await esbuild.build(EsbuildOptions as esbuild.BuildOptions).catch(() => {
             process.exit(1)
         });
         const end = Date.now()
         console.log(`build in ${((end - now) / 1000).toFixed(2)}`)
     } else {
         const now = Date.now()
-        const ctx = await esbuild.context(EsbuildOptions).catch(() => {
+        const ctx = await esbuild.context(EsbuildOptions as esbuild.BuildOptions).catch(() => {
             process.exit(1)
         });
         ctx.watch()
