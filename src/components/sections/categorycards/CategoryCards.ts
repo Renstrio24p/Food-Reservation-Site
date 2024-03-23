@@ -1,8 +1,32 @@
-import { sliderData } from 'src/components/data/Data.ts';
+import { SliderType } from 'src/components/data/Data.ts';
+import store, { fetchSliderData } from '../../../redux/redux.state.ts';
 import './index.css';
 
 export default function categorycards(DOM: HTMLDivElement) {
-    let filteredData = sliderData;
+   
+    const dispatch = store.dispatch;
+
+    const fetchData = async () => {
+        try {
+            await dispatch(fetchSliderData());
+        } catch (error) {
+            console.error('Error fetching slider data:', error);
+        }
+    };
+
+    fetchData();
+    
+    store.subscribe(() => {
+        const state = store.getState();
+        const sliderData = state.slider.sliderData;
+
+        if (!Array.isArray(sliderData)) {
+            console.error('Slider data is not an array:', sliderData);
+            return;
+        }
+
+        renderCards(sliderData);
+    });
 
     DOM.innerHTML = (`
         <h4>Categories</h4>
@@ -22,12 +46,7 @@ export default function categorycards(DOM: HTMLDivElement) {
         </div>
     `);
 
-    const filterData = (category: string) => {
-        filteredData = sliderData.filter(item => item.category === category);
-        renderCards(filteredData);
-    };
-
-    const renderCards = (data: typeof sliderData) => {
+    const renderCards = (data: SliderType) => {
         const cardsContainer = DOM.querySelector('.cards-container') as HTMLDivElement;
         cardsContainer.innerHTML = data.map((item, id) => `
             <div key='${id}' class='card'>
@@ -46,10 +65,11 @@ export default function categorycards(DOM: HTMLDivElement) {
         cardsContainer.style.scrollBehavior = 'smooth'; 
     };
 
-    renderCards(sliderData);
+    const filterData = (category: string, sliderData: SliderType) => {
+        const filteredData = sliderData.filter(item => item.category === category);
+        renderCards(filteredData);
+    };
 
-    const slideLeft = document.getElementById('slide-left') as HTMLElement;
-    const slideRight = document.getElementById('slide-right') as HTMLElement;
     const selectBtn = document.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
 
     selectBtn.forEach(button => {
@@ -57,13 +77,18 @@ export default function categorycards(DOM: HTMLDivElement) {
             selectBtn.forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
             const category = button.textContent!.toLowerCase();
+            const state = store.getState();
+            const sliderData = state.slider.sliderData;
             if (category === 'all') {
                 renderCards(sliderData);
             } else {
-                filterData(category);
+                filterData(category, sliderData);
             }
         });
     });
+
+    const slideLeft = document.getElementById('slide-left') as HTMLElement;
+    const slideRight = document.getElementById('slide-right') as HTMLElement;
 
     slideLeft.onclick = () => {
         const cardsContainer = DOM.querySelector('.cards-container') as HTMLElement;

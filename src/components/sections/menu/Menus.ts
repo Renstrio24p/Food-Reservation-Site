@@ -1,15 +1,32 @@
-import { sliderData, SliderType } from 'src/components/data/Data.ts'
-import './index.css'
+import store, { fetchSliderData, SliderType } from 'src/redux/redux.state.ts';
+import './index.css';
 
 export default function Menus(DOM: HTMLDivElement) {
-    
+    const dispatch = store.dispatch;
 
-    const breakfastData = sliderData.filter(item => item.category === 'breakfast')
-    const lunchData = sliderData.filter(item => item.category === 'lunch')
-    const dinnerData = sliderData.filter(item => item.category === 'dinner')
-    const dessertData = sliderData.filter(item => item.category === 'desserts')
-  
-    function generateCards(data: SliderType) {
+    const fetchData = async () => {
+        try {
+            await dispatch(fetchSliderData());
+        } catch (error) {
+            console.error('Error fetching slider data:', error);
+        }
+    };
+
+    fetchData();
+
+    store.subscribe(() => {
+        const state = store.getState();
+        const sliderData = state.slider.sliderData;
+
+        if (!Array.isArray(sliderData)) {
+            console.error('Slider data is not an array:', sliderData);
+            return;
+        }
+
+        renderMenus(sliderData);
+    });
+
+    const generateCards = (data: SliderType) => {
         return data.map((item, id) => `
             <div key=${id} class='menu-card'>
                 <div class='image-content'>
@@ -33,39 +50,39 @@ export default function Menus(DOM: HTMLDivElement) {
         `).join('');
     }
 
-    DOM.innerHTML = (`
-    <div class='dish-menu'>
-       <h2>Dish Menu</h2>
-       <p class='menu-title'>BreakFast Dish</p>
-       <p class='desc'>Morning Dish Favorite</p>
-       <div class='breakfast-content'>
-           ${generateCards(breakfastData)}
-       </div>
-    </div>
-    <div class='dish-menu'>
-       <p class='menu-title'>Lunch Dish</p>
-       <p class='desc'>Lunch Dish Favorites</p>
-       <div class='breakfast-content'>
-           ${generateCards(lunchData)}
-       </div>
-    </div>
-    <div class='dish-menu'>
-       <p class='menu-title'>Dinner Dish</p>
-       <p class='desc'>Dinner Dish Favorites</p>
-       <div class='breakfast-content'>
-           ${generateCards(dinnerData)}
-       </div>
-    </div>
-    <div class='dish-menu'>
-       <p class='menu-title'>Desserts</p>
-       <p class='desc'>Dessert Favorites</p>
-       <div class='breakfast-content'>
-           ${generateCards(dessertData)}
-       </div>
-    </div>
-  `);
+    const renderMenus = (sliderData: SliderType) => {
+        DOM.innerHTML = (`
+            <div class='dish-menu'>
+                <h2>Dish Menu</h2>
+                <p class='menu-title'>Breakfast Dish</p>
+                <p class='desc'>Morning Dish Favorite</p>
+                <div class='breakfast-content'>
+                    ${generateCards(sliderData.filter(item => item.category === 'breakfast'))}
+                </div>
+            </div>
+            <div class='dish-menu'>
+                <p class='menu-title'>Lunch Dish</p>
+                <p class='desc'>Lunch Dish Favorites</p>
+                <div class='breakfast-content'>
+                    ${generateCards(sliderData.filter(item => item.category === 'lunch'))}
+                </div>
+            </div>
+            <div class='dish-menu'>
+                <p class='menu-title'>Dinner Dish</p>
+                <p class='desc'>Dinner Dish Favorites</p>
+                <div class='breakfast-content'>
+                    ${generateCards(sliderData.filter(item => item.category === 'dinner'))}
+                </div>
+            </div>
+            <div class='dish-menu'>
+                <p class='menu-title'>Desserts</p>
+                <p class='desc'>Dessert Favorites</p>
+                <div class='breakfast-content'>
+                    ${generateCards(sliderData.filter(item => item.category === 'desserts'))}
+                </div>
+            </div>
+        `);
+    };
 
-
-
-  return DOM
+    return DOM;
 }

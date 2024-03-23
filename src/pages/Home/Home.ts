@@ -1,10 +1,35 @@
 import categorycards from 'src/components/sections/categorycards/CategoryCards.ts';
-import { sliderData } from '../../components/data/Data.ts'
 import { scriptElement } from '../../utils/sanitizer/domSanitizer.ts';
-import './Home.css'
 import Aboutus from 'src/components/sections/aboutus/Aboutus.ts';
+import { fetchSliderData } from 'src/redux/redux.state.ts';
+import store from 'src/redux/redux.state.ts';
+import './index.css';
 
 export default function Home(DOM: HTMLDivElement) {
+
+    const dispatch = store.dispatch;
+
+    const fetchData = async () => {
+        try {
+            await dispatch(fetchSliderData());
+        } catch (error) {
+            console.error('Error fetching slider data:', error);
+        }
+    };
+
+    fetchData();
+
+    store.subscribe(() => {
+        const state = store.getState();
+        const sliderData = state.slider.sliderData;
+
+        if (!Array.isArray(sliderData)) {
+            console.error('Slider data is not an array:', sliderData);
+            return;
+        }
+
+        renderSlider(sliderData);
+    });
 
     DOM.innerHTML = (`
         <div class='hero-section'>
@@ -20,24 +45,7 @@ export default function Home(DOM: HTMLDivElement) {
         <div class='slider'>
             <i class='bx bx-chevron-left' id='slide-left'></i>
             <div class='slider-slides'> 
-                <div class='cards-container'>
-                    ${sliderData.map((item, id) =>
-        `
-                                <div key='${id}' class='card'>
-                                    <div class='food-img'>
-                                        <img src='/${item.image}' alt='food image' />
-                                    </div>
-                                    <div class='info'>
-                                        <h3>${item.title}</h3>
-                                        <p>${item.description}</p>
-                                        <p>₱${item.price}</p>
-                                        <i class='bx bx-x'></i>
-                                    </div>
-                                </div>
-                            `
-                        ).join('')
-                    }
-                </div>
+                <div class='cards-container'></div>
             </div>
             <i class='bx bx-chevron-right' id='slide-right'></i>
         </div>
@@ -45,33 +53,36 @@ export default function Home(DOM: HTMLDivElement) {
         <div id='about-section' class='about-section'></div>
     `);
 
-    const slideLeft = document.getElementById('slide-left') as HTMLElement;
-    const slideRight = document.getElementById('slide-right') as HTMLElement;
-    const sliderSlides = document.querySelector('.slider-slides') as HTMLElement;
+    const renderSlider = (sliderData: any[]) => {
+        const cardsContainer = document.querySelector('.cards-container') as HTMLElement;
 
-    if (slideLeft && slideRight && sliderSlides) {
-        slideLeft.onclick = () => {
-            sliderSlides.scrollLeft -= 100;
-            console.log('clicked left')
-        };
+        if (!cardsContainer) {
+            console.error('Cards container not found');
+            return;
+        }
 
-        slideRight.onclick = () => {
-            sliderSlides.scrollLeft += 100;
-            console.log('clicked right')
-        };
-    }
+        cardsContainer.innerHTML = sliderData.map((item, id) => `
+            <div key='${id}' class='card'>
+                <div class='food-img'>
+                    <img src='/${item.image}' alt='food image' />
+                </div>
+                <div class='info'>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                    <p>₱${item.price}</p>
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+        `).join('');
+    };
 
-    // Mount Categories Component
+    const categories = document.getElementById('categories') as HTMLDivElement;
+    categories.appendChild(scriptElement);
+    categorycards(categories);
 
-    const categories = document.getElementById('categories') as HTMLDivElement
-    categories.appendChild(scriptElement) // sanitized DOM parameter to avoid XSS
-    categorycards(categories)
-
-    // Mount About Component
-
-    const aboutSection = document.getElementById('about-section') as HTMLDivElement
-    aboutSection.appendChild(scriptElement) // sanitized DOM parameter to avoid XSS
-    Aboutus(aboutSection)
+    const aboutSection = document.getElementById('about-section') as HTMLDivElement;
+    aboutSection.appendChild(scriptElement);
+    Aboutus(aboutSection);
 
     return DOM;
 }

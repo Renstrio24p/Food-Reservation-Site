@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.2",
     "animate.css": "^4.1.1",
+    "axios": "^1.6.8",
     "boxicons": "^2.1.4",
     "esbuild": "^0.20.2",
     "ts-node": "^10.9.2",
