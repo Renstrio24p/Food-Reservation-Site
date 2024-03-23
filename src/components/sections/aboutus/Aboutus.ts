@@ -1,6 +1,6 @@
-import './AboutSection.css'
+import './index.css'
 
-export default function AboutSection(DOM: HTMLDivElement) {
+export default function Aboutus(DOM: HTMLDivElement) {
 
     DOM.innerHTML = (`
     <div class='about-section'>
@@ -8,7 +8,10 @@ export default function AboutSection(DOM: HTMLDivElement) {
       <div class='about-content'>
         <div class='about-left'>
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quos eligendi fugit repellendus beatae fuga saepe cupiditate sequi corporis odio.
+            "Potsession" in Tuao is your go-to destination for delicious food
+             and drinks in a cozy atmosphere. Our menu blends traditional Tuao 
+             flavors with modern twists, all crafted with locally sourced ingredients. 
+             Join us for a memorable culinary experience and warm hospitality.
             </p>
             <button>Read more</button>
         </div>

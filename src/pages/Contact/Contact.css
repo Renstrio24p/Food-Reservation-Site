@@ -3,6 +3,10 @@
     --plate: url('/whiteplate.webp')
 }
 
+nav.text-white ul li a {
+    color: white;
+}
+
 .contact {
     animation: fadeIn 1s ease;
 }

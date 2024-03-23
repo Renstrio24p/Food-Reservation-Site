@@ -15,6 +15,10 @@
     animation: fadeIn 2s ease;
 }
 
+nav.text-white ul li a {
+    color: white;
+}
+
 .about-hero h1 {
     font: 120px 'Dancing Script', cursive;
     color: white;

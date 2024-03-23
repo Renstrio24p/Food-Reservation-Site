@@ -1,4 +1,5 @@
-import { isAuthenticated } from "../../Authentication/isAuthenticated";
+// import { isAuthenticated } from "../../Authentication/isAuthenticated.ts";
+import './index.css'
 
 export default function Cart(DOM: HTMLDivElement) {
 

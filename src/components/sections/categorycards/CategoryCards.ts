@@ -1,7 +1,7 @@
-import { sliderData } from '../data/Data';
-import './Categories.css';
+import { sliderData } from 'src/components/data/Data.ts';
+import './index.css';
 
-export default function Categories(DOM: HTMLDivElement) {
+export default function categorycards(DOM: HTMLDivElement) {
     let filteredData = sliderData;
 
     DOM.innerHTML = (`
@@ -33,10 +33,10 @@ export default function Categories(DOM: HTMLDivElement) {
             <div key='${id}' class='card'>
                 <div class='food-img'>
                     <img src='/${item.image}' alt='food image' />
-                    <p>${item.category}</p>
+                    <p class='item-category'>${item.category}</p>
                 </div>
                 <div class='info'>
-                    <h3>${item.title}</h3>
+                    <h3 class='title-item'>${item.title}</h3>
                     <p>${item.description}</p>
                     <p>₱${item.price}</p>
                     <i class='bx bx-x'></i>

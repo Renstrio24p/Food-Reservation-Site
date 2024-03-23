@@ -19,9 +19,10 @@
     margin: 3rem 6%;
 }
 
-.options button {
+.categories .options button {
     border-radius: 10px;
     border: none;
+    font-size: 14px;
 }
 
 .options button:not(:first-child) {
@@ -53,14 +54,18 @@
     height: 180px;
 }
 
-.categories .food-img p {
+.categories .food-img .item-category {
     position: absolute;
     top: 10px;
     left: 10px;
     background-color: white;
     padding: 2px 5px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.card .info .title-item {
+    font-size: 14px;
 }
 
 /* Media Queries */

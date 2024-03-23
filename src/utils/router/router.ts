@@ -1,15 +1,15 @@
 
-import NotFound from "../../pages/404/NotFound";
-import About from "../../pages/About/About";
-import Category from "../../pages/Category/Category";
-import Contact from "../../pages/Contact/Contact";
-import Home from "../../pages/Home/Home";
-import Menu from "../../pages/Menu/Menu";
-import { isAuthenticated } from "../../pages/auth/Authentication/isAuthenticated";
-import Cart from "../../pages/auth/pages/cart/Cart";
-import Login from "../../pages/auth/pages/login/Login";
-import Settings from "../../pages/auth/pages/settings/Settings";
-import { TSRouter } from "./class/router.class";
+import Home from "src/pages/Home/Home.ts";
+import Login from "../../pages/auth/pages/login/Login.ts";
+import Settings from "../../pages/auth/pages/settings/Settings.ts";
+import { TSRouter } from "./class/router.class.ts";
+import Menu from "src/pages/Menu/Menu.ts";
+import Category from "src/pages/Category/Category.ts";
+import About from "src/pages/About/About.ts";
+import Contact from "src/pages/Contact/Contact.ts";
+import { isAuthenticated } from "src/pages/auth/Authentication/isAuthenticated.ts";
+import Cart from "src/pages/auth/pages/cart/Cart.ts";
+import NotFound from "src/pages/404/NotFound.ts";
 
 export const Routes = (DOM: HTMLDivElement) => {
     const router = new TSRouter([

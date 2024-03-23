@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",
-    "esbuild": "^0.20.1",
+    "boxicons": "^2.1.4",
+    "esbuild": "^0.20.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
@@ -24,7 +25,6 @@
     "dompurify": "^3.0.9",
     "esbuild-copy-static-files": "^0.1.0",
     "esbuild-plugin-inline-image": "^0.0.9",
-    "ts-node-esm": "^0.0.6",
     "typeface-dancing-script": "^1.1.13",
     "typeface-poppins": "^1.1.13"
   }

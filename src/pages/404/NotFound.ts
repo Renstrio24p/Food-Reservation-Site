@@ -1,5 +1,5 @@
 
-import './NotFound.css'
+import './index.css'
 
 export default function NotFound(DOM: HTMLDivElement) {
 

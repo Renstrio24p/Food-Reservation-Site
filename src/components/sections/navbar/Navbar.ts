@@ -1,4 +1,4 @@
-import './Navbar.css';
+import './index.css';
 
 export default function Navbar(DOM: HTMLDivElement) {
   DOM.innerHTML = `
@@ -17,7 +17,7 @@ export default function Navbar(DOM: HTMLDivElement) {
         <li><a href='/aboutus'>About us</a></li>
         <li><a href='/contactus'>Contact</a></li>
       </ul>
-      <a href='/login'><button>login</button></a>
+      <a href='/login'><button class='login-btn'>login</button></a>
     </div>
     <p class='bx bx-menu' id='menu-collapse'></p>
   `;

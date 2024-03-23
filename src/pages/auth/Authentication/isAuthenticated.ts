@@ -1,4 +1,4 @@
-import './Auth.css'
+import './index.css'
 
 
 export function isAuthenticated(authComponent: (DOM: HTMLDivElement) => void, DOM: HTMLDivElement): void {

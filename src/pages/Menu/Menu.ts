@@ -1,6 +1,6 @@
-import MenuSection from '../../components/MenuSection/MenuSection';
-import { scriptElement } from '../../utils/sanitizer/domSanitizer';
-import './Menu.css'
+import Menus from 'src/components/sections/menu/Menus.ts';
+import { scriptElement } from '../../utils/sanitizer/domSanitizer.ts';
+import './index.css'
 
 export default function Menu(DOM: HTMLDivElement) {
 
@@ -26,7 +26,7 @@ export default function Menu(DOM: HTMLDivElement) {
 
     const menuSection = DOM.querySelector('#menu-section') as HTMLDivElement
     menuSection.appendChild(scriptElement)
-    MenuSection(menuSection)
+    Menus(menuSection)
 
   return DOM
 }

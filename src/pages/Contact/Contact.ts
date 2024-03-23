@@ -46,6 +46,9 @@ export default function Contact(DOM: HTMLDivElement) {
       </div>
   `);
 
+  const navChange = document.querySelector('nav') as HTMLDivElement
+   navChange.classList.add('text-white')
+
   const inputFields = DOM.querySelectorAll('.inputs') as NodeListOf<HTMLInputElement | HTMLTextAreaElement>;
 
   inputFields.forEach((input) => {

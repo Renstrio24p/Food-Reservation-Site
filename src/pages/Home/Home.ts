@@ -1,8 +1,8 @@
-import AboutSection from '../../components/AboutSection/AboutSection';
-import Categories from '../../components/Categories/Categories';
-import { sliderData } from '../../components/data/Data'
-import { scriptElement } from '../../utils/sanitizer/domSanitizer';
+import categorycards from 'src/components/sections/categorycards/CategoryCards.ts';
+import { sliderData } from '../../components/data/Data.ts'
+import { scriptElement } from '../../utils/sanitizer/domSanitizer.ts';
 import './Home.css'
+import Aboutus from 'src/components/sections/aboutus/Aboutus.ts';
 
 export default function Home(DOM: HTMLDivElement) {
 
@@ -65,13 +65,13 @@ export default function Home(DOM: HTMLDivElement) {
 
     const categories = document.getElementById('categories') as HTMLDivElement
     categories.appendChild(scriptElement) // sanitized DOM parameter to avoid XSS
-    Categories(categories)
+    categorycards(categories)
 
     // Mount About Component
 
     const aboutSection = document.getElementById('about-section') as HTMLDivElement
     aboutSection.appendChild(scriptElement) // sanitized DOM parameter to avoid XSS
-    AboutSection(aboutSection)
+    Aboutus(aboutSection)
 
     return DOM;
 }

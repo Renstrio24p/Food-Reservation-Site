@@ -1,5 +1,5 @@
-import { SliderType, sliderData } from '../data/Data';
-import './CategorySet.css';
+import { sliderData, SliderType } from 'src/components/data/Data.ts';
+import './index.css';
 
 export default function CategorySet(DOM: HTMLDivElement) {
     const filterAppetizers = sliderData.filter(item => item.collection === 'appetizer');

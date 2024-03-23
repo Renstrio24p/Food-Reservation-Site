@@ -1,7 +1,7 @@
-import Footer from "./components/Footer/Footer"
-import Navbar from "./components/Navbar/Navbar"
-import { Routes } from "./utils/router/router"
-import { scriptElement } from "./utils/sanitizer/domSanitizer"
+import Footer from "./components/sections/footer/Footer.ts"
+import Navbar from "./components/sections/navbar/Navbar.ts"
+import { Routes } from "./utils/router/router.ts"
+import { scriptElement } from "./utils/sanitizer/domSanitizer.ts"
 
 export default function Start(DOM: HTMLDivElement) {
 

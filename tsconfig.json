@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "node16",
+    "module": "Node16",
     "esModuleInterop": true,
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "Node16",
     "strict": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "baseUrl": "./",
+    "isolatedModules": true,
   }
 }

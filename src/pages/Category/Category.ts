@@ -1,7 +1,7 @@
-import CategorySet from '../../components/CategorySet/CategorySet'
-import RightSidebar from '../../components/RightSidebar/RightSidebar'
-import { scriptElement } from '../../utils/sanitizer/domSanitizer'
-import './Category.css'
+import CategorySet from 'src/components/sections/categoryset/Categoryset.ts'
+import { scriptElement } from '../../utils/sanitizer/domSanitizer.ts'
+import RightSidebar from 'src/components/sections/righbar/Rightbar.ts'
+import './index.css'
 
 export default function Category(DOM: HTMLDivElement) {
 

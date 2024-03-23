@@ -1,4 +1,4 @@
-import './RightSidebar.css'
+import './index.css'
 
 export default function RightSidebar(DOM: HTMLDivElement) {
 

@@ -1,19 +1,32 @@
+.hero-section,
+.slider {
+    height: fit-content;
+    width: 100%
+}
+
+.card,
+.card img,
+.hero-section {
+    position: relative
+}
+
+.card,
+.card .info {
+    background-color: #dcdcdc
+}
 
 :root {
     --image: url('/background.jpg')
 }
 
 .hero-section {
-    width: 100%;
-    height: fit-content;
     padding: 120px 8% 5% 5%;
     line-height: 4rem;
     background-image: var(--image);
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom-left-radius: 40%;
-    position: relative;
-    background-attachment: fixed;
+    background-attachment: fixed
 }
 
 .hero-section .iphone {
@@ -21,79 +34,77 @@
     width: 500px;
     right: 20px;
     bottom: -80px;
-    z-index: 1; 
+    z-index: 1
 }
 
-.hero-section :where(h2,p){
-    animation: fadeInLeft 2s ease;
+.hero-section :where(h2, p) {
+    animation: 2s fadeInLeft
 }
 
 .hero-section h2 {
-    font-size: 55px;
+    font-size: 55px
 }
 
 .hero-section p {
     font-size: 62px;
-    font-weight: 600;
+    font-weight: 600
 }
 
-.hero-section :where(span,p) {
-    color: #B50107;
+.hero-section :where(span, p) {
+    color: #b50107
 }
 
 .hero-section div {
-    padding: 2% 3%;
+    padding: 2% 3%
 }
 
 .menu-h2 {
     text-align: center;
     font-size: 60px;
-    font-weight: 500;
+    font-weight: 500
 }
 
 .hero-section button {
     padding: 10px 15px;
     outline: 0;
-    border-radius: 0.4rem;
-    color: black;
-    border: 1px solid #B50107;
+    border-radius: .4rem;
+    color: #000;
+    border: 1px solid #b50107;
     background-color: transparent;
     cursor: pointer;
-    animation: fadeInUp 2s ease;
+    animation: 2s fadeInUp
 }
 
 .hero-section button:first-child {
     margin-right: 1rem;
-    background-color: #B50107;
-    color: white;
-    border: none;
+    background-color: #b50107;
+    color: #fff;
+    border: none
 }
 
 .slider {
-    width: 100%;
-    height: fit-content;
     padding: 5% 6%;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeInDown 2s ease;
+    animation: 2s fadeInDown
 }
 
-
-.slider .bx-chevron-left,.bx-chevron-right {
-    font-size: 80px;
+.bx-chevron-right,
+.slider .bx-chevron-left {
+    font-size: 80px
 }
 
-.slider :where(.bx-chevron-left,.bx-chevron-right):hover {
-    scale: 1.5;
+.slider :where(.bx-chevron-left, .bx-chevron-right):hover {
+    scale: 1.5
 }
 
 .slider .bx-chevron-left:hover {
-    margin-right: 2rem;
+    margin-right: 2rem
 }
 
 .slider .bx-chevron-right:hover {
-    margin-left: 2rem;
+    margin-left: 2rem
 }
 
 .slider-slides {
@@ -102,47 +113,45 @@
     gap: 2rem;
     width: 100%;
     height: 250px;
-    overflow-x: scroll; 
+    overflow-x: scroll;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory; 
-    justify-content: center;
+    scroll-snap-type: x mandatory;
+    justify-content: center
+}
+
+.card,
+.card .food-img {
+    width: 240px;
+    overflow: hidden
 }
 
 .slider-slides .cards-container {
     display: flex;
     gap: 60px;
-    flex-wrap: nowrap; 
-    scroll-snap-type: x mandatory; 
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory
 }
 
 .card {
-    width: 240px;
     height: auto;
-    background-color: gainsboro;
-    position: relative;
-    overflow: hidden;
-    flex: 0 0 auto; 
-    scroll-snap-align: start; 
-    border-radius: 10px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border-radius: 10px
 }
 
 .card img {
     width: 100%;
-    z-index: 0;
-    position: relative;
+    z-index: 0
 }
 
 .card .food-img {
-    width: 240px;
     height: 100px;
-    overflow: hidden;
-    object-fit: cover;
+    object-fit: cover
 }
 
 .card .info {
     padding: 5% 6%;
-    background-color: gainsboro;
-    z-index: 99;
+    z-index: 99
 }
 
 .card .info i {
@@ -154,102 +163,95 @@
     border-radius: 50%;
     border: 1px solid #707070;
     display: grid;
-    place-items: center;
+    place-items: center
 }
 
 .card:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(50, 50, 93, .25) 0 13px 27px -5px, rgba(0, 0, 0, .3) 0 8px 16px -8px
 }
 
 .card:hover .info i {
-    transform: rotate(45deg);
+    transform: rotate(45deg)
 }
 
 .card:hover img {
-    transform: scale(2);
+    transform: scale(2)
 }
 
 .card h3 {
     font-weight: 600;
-    color: #B50107;
-    font-size: 20px;
+    color: #b50107;
+    font-size: 20px
 }
 
 .card p {
-    font-size: 14px;
+    font-size: 14px
 }
 
-/* Media Queries */
-
 @media screen and (min-width:1920px) {
-    
+
     .hero-section h2,
     .hero-section p {
-        font-size: 90px;
+        font-size: 90px
     }
 
     .hero-section {
-        line-height: 5rem;
+        line-height: 5rem
     }
 
     .hero-section button {
-        font-size: 25px;
+        font-size: 25px
     }
 
     .hero-section .iphone {
         width: 700px;
-        bottom: -120px;
+        bottom: -120px
     }
-
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width:900px) {
 
     .hero-section h2,
     .hero-section p {
-        font-size: 40px;
+        font-size: 40px
     }
 
     .iphone {
-        display: none;
+        display: none
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width:800px) {
     .hero-section {
         text-align: center;
         transition: 1s;
-        border-radius: 0;
+        border-radius: 0
     }
 }
 
-@media screen and (max-width: 500px) {
-
+@media screen and (max-width:500px) {
     .hero-section {
-        line-height: 2rem;
+        line-height: 2rem
     }
 
     .hero-section h2,
     .hero-section p {
-        font-size: 30px;
+        font-size: 30px
     }
-    
 }
 
 @media screen and (max-width:451px) {
-    
     .slider i {
-        display: none;
+        display: none
     }
 
     .slider .slider-slides .cards-container {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: center
     }
 
     .slider-slides {
         overflow-y: scroll;
-        height: fit-content;
+        height: fit-content
     }
-
 }

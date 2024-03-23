@@ -1,7 +1,7 @@
-import { SliderType, sliderData } from '../data/Data';
-import './MenuSection.css'
+import { sliderData, SliderType } from 'src/components/data/Data.ts'
+import './index.css'
 
-export default function MenuSection(DOM: HTMLDivElement) {
+export default function Menus(DOM: HTMLDivElement) {
     
 
     const breakfastData = sliderData.filter(item => item.category === 'breakfast')

@@ -1,4 +1,4 @@
-import './About.css'
+import './index.css'
 
 export default function About(DOM: HTMLDivElement) {
 
@@ -26,6 +26,9 @@ export default function About(DOM: HTMLDivElement) {
         <button>Reserved Now</button>
     </div>
   `)
+
+  const navChange = document.querySelector('nav') as HTMLDivElement
+   navChange.classList.add('text-white')
 
     return DOM
 
