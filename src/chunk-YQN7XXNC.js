@@ -1,4 +1,4 @@
-import{c as n}from"./chunk-75BM2CW5.js";n();function a(e){e.innerHTML=`
+import{d as n}from"./chunk-WEUAS4CC.js";n();function a(e){e.innerHTML=`
     <div class='login-page'>
        <div class='login-container'>
            <div class='login-left'>

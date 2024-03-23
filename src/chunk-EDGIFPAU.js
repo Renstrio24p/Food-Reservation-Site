@@ -1,4 +1,4 @@
-import{c as o}from"./chunk-75BM2CW5.js";o();function r(t){t.innerHTML=`
+import{d as o}from"./chunk-WEUAS4CC.js";o();function r(t){t.innerHTML=`
     <div class='left'>
       <img src='/food.png' alt='food' />
       <div>

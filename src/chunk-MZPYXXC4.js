@@ -1,4 +1,4 @@
-import{c as o}from"./chunk-75BM2CW5.js";o();function n(t){t.innerHTML=`
+import{d as o}from"./chunk-WEUAS4CC.js";o();function n(t){t.innerHTML=`
     <div class='notfound'>
        <img class='notfound-logo' src='/food.png' alt='logo background'/>
        <div class='notfound-content'>
