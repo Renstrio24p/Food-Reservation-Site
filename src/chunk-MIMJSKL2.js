@@ -1,4 +1,4 @@
-import{a as d,b as s}from"./chunk-ITYTTWZA.js";import{d as c}from"./chunk-NKHZ5Y4Q.js";c();function h(r){let l=s.dispatch;(async()=>{try{await l(d())}catch(t){console.error("Error fetching slider data:",t)}})(),s.subscribe(()=>{let e=s.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}a(e)}),r.innerHTML=`
+import{a as d,b as s}from"./chunk-NKHQMC22.js";import{d as c}from"./chunk-WEUAS4CC.js";c();function h(r){let l=s.dispatch;(async()=>{try{await l(d())}catch(t){console.error("Error fetching slider data:",t)}})(),s.subscribe(()=>{let e=s.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}a(e)}),r.innerHTML=`
         <h4>Categories</h4>
         <div class='options'>
             <button class='selected all'>All</button>

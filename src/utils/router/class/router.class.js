@@ -1,1 +1,1 @@
-import{a}from"../../../chunk-36DC2HUL.js";import"../../../chunk-NKHZ5Y4Q.js";export{a as TSRouter};
+import{a}from"../../../chunk-HXMYLT3H.js";import"../../../chunk-WEUAS4CC.js";export{a as TSRouter};
