@@ -1,7 +1,10 @@
-import store, { fetchSliderData } from '../../../redux/redux.state.ts';
+import store, { fetchSliderData, SliderType } from '../../../redux/redux.state.ts';
+import Modal from '../modal/Modal.ts';
 import './index.css';
 
 export default function CategorySet(DOM: HTMLDivElement) {
+
+
     const dispatch = store.dispatch;
 
     const fetchData = async () => {
@@ -23,14 +26,24 @@ export default function CategorySet(DOM: HTMLDivElement) {
             return;
         }
 
+        const openModal = (id: string) => {
+            const selectedItem = sliderData.find((item) => item._id === id);
+            if (selectedItem) {
+                const modal = document.createElement('div');
+                modal.classList.add('modal');
+                document.body.appendChild(modal);
+                Modal(modal, selectedItem);
+            }
+        };
+
         const filterByCategory = (category: string) => {
             return sliderData.filter((item) => item.collection === category);
         };
 
-        const generateCards = (data: any[]) => {
+        const generateCards = (data: SliderType) => {
             return data.map((item, id) => {
                 return (`
-                    <div key=${id} class='collection-card'>
+                    <div key=${id} class='collection-card' id=${id}>
                         <div class='collection-image'>
                             <img src='${item.image}' alt='collection' />
                         </div>
@@ -39,7 +52,7 @@ export default function CategorySet(DOM: HTMLDivElement) {
                                 <h3>${item.title}</h3>
                                 <p>Flavors: ${item.flavors ? item.flavors.join(', ') : ''}</p>
                             </div>
-                            <button>Add To Cart</button>
+                            <input type='button' id='button-${id}' value='Add To Cart' data-id='${item._id}'>
                         </div>
                     </div>
                 `);
@@ -119,37 +132,48 @@ export default function CategorySet(DOM: HTMLDivElement) {
         `);
 
         DOM.addEventListener('click', (event) => {
-            const target = event.target as HTMLButtonElement;
-            if (target.tagName === 'BUTTON') {
-                const category = target.id;
-                const categorySection = document.querySelector(`.hero-category-section.${category}`) as HTMLElement;
-                if (categorySection) {
-                    const rect = categorySection.getBoundingClientRect();
-                    const startY = window.pageYOffset;
-                    const targetY = startY + rect.top;
-                    const duration = 1000;
-                    let start: number | null = null;
+            const target = event.target as HTMLElement;
+            if (target.tagName === 'INPUT' && target.getAttribute('type') === 'button') {
+                const id = target.getAttribute('data-id') as string;
+                openModal(id);
+            } else
+                if (target.tagName === 'BUTTON') {
+                    const category = target.id;
+                    const categorySection = document.querySelector(`.hero-category-section.${category}`) as HTMLElement;
+                    if (categorySection) {
+                        const rect = categorySection.getBoundingClientRect();
+                        const startY = window.pageYOffset;
+                        const targetY = startY + rect.top;
+                        const duration = 1000;
+                        let start: number | null = null;
 
-                    const step = (timestamp: number) => {
-                        if (!start) start = timestamp;
-                        const elapsed = timestamp - start;
-                        const progress = easeInOutQuad(Math.min(elapsed / duration, 1));
-                        window.scrollTo(0, startY + progress * (targetY - startY));
-                        if (elapsed < duration) {
-                            window.requestAnimationFrame(step);
-                        }
-                    };
+                        const step = (timestamp: number) => {
+                            if (!start) start = timestamp;
+                            const elapsed = timestamp - start;
+                            const progress = easeInOutQuad(Math.min(elapsed / duration, 1));
+                            window.scrollTo(0, startY + progress * (targetY - startY));
+                            if (elapsed < duration) {
+                                window.requestAnimationFrame(step);
+                            }
+                        };
 
-                    window.requestAnimationFrame(step);
+                        window.requestAnimationFrame(step);
+
+                        // Remove 'active' class from all buttons
+                        const buttons = document.querySelectorAll('.nav-category button');
+                        buttons.forEach(button => button.classList.remove('active'));
+
+                        // Add 'active' class to the clicked button
+                        target.classList.add('active');
+                    }
                 }
-            }
         });
 
         const easeInOutQuad = (t: number) => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-        
+
         window.addEventListener('scroll', () => {
             const navCategory = document.querySelector('.nav-category') as HTMLElement;
-            if (window.pageYOffset > 50) { 
+            if (window.pageYOffset > 50) {
                 navCategory.classList.add('fixed');
             } else {
                 navCategory.classList.remove('fixed');

@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
+    "@types/dompurify": "^3.0.5",
+    "@types/swiper": "^6.0.0",
     "animate.css": "^4.1.1",
     "axios": "^1.6.8",
     "boxicons": "^2.1.4",
@@ -24,7 +26,7 @@
     "@types/esbuild-copy-static-files": "^0.1.3",
     "@types/node": "^20.11.24",
     "alive-server": "^1.3.0",
-    "dompurify": "^3.0.9",
+    "dompurify": "^3.0.11",
     "esbuild-copy-static-files": "^0.1.0",
     "esbuild-plugin-inline-image": "^0.0.9",
     "typeface-dancing-script": "^1.1.13",

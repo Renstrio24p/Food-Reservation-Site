@@ -4,6 +4,29 @@
     width: 100%
 }
 
+.swiper-container {
+    position: relative;
+    width: 100%;
+}
+
+.swiper-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5); /* Example background color */
+}
+
+
 .card,
 .card img,
 .hero-section {

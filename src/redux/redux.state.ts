@@ -2,6 +2,7 @@ import { createSlice, configureStore, createAsyncThunk } from '@reduxjs/toolkit'
 import axios, { AxiosInstance } from 'axios';
 
 export type SliderType = {
+    _id: string,
     image: string,
     title: string,
     category: string,

@@ -1,12 +1,13 @@
 import categorycards from 'src/components/sections/categorycards/CategoryCards.ts';
 import { scriptElement } from '../../utils/sanitizer/domSanitizer.ts';
 import Aboutus from 'src/components/sections/aboutus/Aboutus.ts';
-import { fetchSliderData } from 'src/redux/redux.state.ts';
+import { fetchSliderData, SliderType } from 'src/redux/redux.state.ts';
 import store from 'src/redux/redux.state.ts';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 import './index.css';
 
 export default function Home(DOM: HTMLDivElement) {
-
     const dispatch = store.dispatch;
 
     const fetchData = async () => {
@@ -31,6 +32,54 @@ export default function Home(DOM: HTMLDivElement) {
         renderSlider(sliderData);
     });
 
+    const renderSlider = (sliderData: SliderType) => {
+        const slidesHTML = sliderData.map((item, id) => `
+            <div key=${id} class='swiper-slide'>
+                <div class='card'>
+                    <div class='food-img'>
+                        <img src='/${item.image}' alt='food image' />
+                    </div>
+                    <div class='info'>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                        <p>₱${item.price}</p>
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        const swiperWrapper = DOM.querySelector('.swiper-wrapper');
+        if (swiperWrapper) {
+            swiperWrapper.innerHTML = slidesHTML;
+        } else {
+            console.error('Swiper wrapper not found.');
+        }
+
+        // Adjust slidesPerView based on the number of slides
+        const slidesPerView = Math.min(3, sliderData.length); // Maximum of 3 slides per view
+        initSwiper(slidesPerView);
+    };
+
+    const initSwiper = (slidesPerView: number) => {
+        const swiperContainer = DOM.querySelector('.swiper-container');
+        if (!swiperContainer) {
+            console.error('Swiper container not found.');
+            return;
+        }
+
+        new Swiper(swiperContainer as HTMLElement, {
+            direction: 'horizontal',
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: slidesPerView,
+            spaceBetween: 20,
+        });
+    };
+
     DOM.innerHTML = (`
         <div class='hero-section'>
             <h2><span>Pot</span>session <span>in Tuao<span></h2>
@@ -42,47 +91,28 @@ export default function Home(DOM: HTMLDivElement) {
             <img class='iphone' src='/iphone-app.png' alt='iphone' />      
         </div>
         <h2 class='menu-h2'>Menu</h2>
-        <div class='slider'>
-            <i class='bx bx-chevron-left' id='slide-left'></i>
-            <div class='slider-slides'> 
-                <div class='cards-container'></div>
+        <div class='swiper-container'>
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-navigation">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <i class='bx bx-chevron-right' id='slide-right'></i>
         </div>
         <div id='categories' class='categories'></div>
         <div id='about-section' class='about-section'></div>
     `);
 
-    const renderSlider = (sliderData: any[]) => {
-        const cardsContainer = document.querySelector('.cards-container') as HTMLElement;
+    const categories = DOM.querySelector('#categories') as HTMLDivElement;
+    if (categories) {
+        categories.appendChild(scriptElement);
+        categorycards(categories);
+    }
 
-        if (!cardsContainer) {
-            console.error('Cards container not found');
-            return;
-        }
-
-        cardsContainer.innerHTML = sliderData.map((item, id) => `
-            <div key='${id}' class='card'>
-                <div class='food-img'>
-                    <img src='/${item.image}' alt='food image' />
-                </div>
-                <div class='info'>
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
-                    <p>₱${item.price}</p>
-                    <i class='bx bx-x'></i>
-                </div>
-            </div>
-        `).join('');
-    };
-
-    const categories = document.getElementById('categories') as HTMLDivElement;
-    categories.appendChild(scriptElement);
-    categorycards(categories);
-
-    const aboutSection = document.getElementById('about-section') as HTMLDivElement;
-    aboutSection.appendChild(scriptElement);
-    Aboutus(aboutSection);
+    const aboutSection = DOM.querySelector('#about-section') as HTMLDivElement;
+    if (aboutSection) {
+        aboutSection.appendChild(scriptElement);
+        Aboutus(aboutSection);
+    }
 
     return DOM;
 }
