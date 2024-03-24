@@ -1,4 +1,4 @@
-import{a as r,b as n}from"./chunk-LYSHGCLI.js";import{d as a}from"./chunk-WEUAS4CC.js";a();function p(s){let o=n.dispatch;(async()=>{try{await o(r())}catch(t){console.error("Error fetching slider data:",t)}})(),n.subscribe(()=>{let e=n.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}c(e)});let i=t=>t.map((e,d)=>`
+import{a as r,b as n}from"./chunk-ITYTTWZA.js";import{d as a}from"./chunk-NKHZ5Y4Q.js";a();function p(s){let o=n.dispatch;(async()=>{try{await o(r())}catch(t){console.error("Error fetching slider data:",t)}})(),n.subscribe(()=>{let e=n.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}c(e)});let i=t=>t.map((e,d)=>`
             <div key=${d} class='menu-card'>
                 <div class='image-content'>
                     <img src='/${e.image}' alt='dish image' />

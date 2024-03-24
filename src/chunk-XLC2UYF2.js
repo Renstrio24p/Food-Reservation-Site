@@ -1,4 +1,4 @@
-import{a as m}from"./chunk-4XRZ2DNU.js";import{a as d}from"./chunk-EDGIFPAU.js";import{a as e}from"./chunk-FFGMKVEJ.js";import{a as i}from"./chunk-LT5HUIER.js";import{d as n}from"./chunk-WEUAS4CC.js";n();function v(a){a.innerHTML=`
+import{a as m}from"./chunk-HLTTPOZQ.js";import{a as d}from"./chunk-VJRO3GHV.js";import{a as e}from"./chunk-GL32EL3P.js";import{a as i}from"./chunk-RYZFE66X.js";import{d as n}from"./chunk-NKHZ5Y4Q.js";n();function v(a){a.innerHTML=`
         <div>
             <nav id='navbar'></nav>
             <div id='router'></div>

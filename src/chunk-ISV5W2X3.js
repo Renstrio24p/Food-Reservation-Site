@@ -1,4 +1,4 @@
-import{a as t}from"./chunk-FFGMKVEJ.js";import{a as h}from"./chunk-ORUQQTB7.js";import{a as l}from"./chunk-BD3LKBPD.js";import{a as c,b as r}from"./chunk-LYSHGCLI.js";import{d}from"./chunk-WEUAS4CC.js";d();function m(n){let p=r.dispatch;(async()=>{try{await p(c())}catch(i){console.error("Error fetching slider data:",i)}})(),r.subscribe(()=>{let e=r.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}x(e)}),n.innerHTML=`
+import{a as t}from"./chunk-GL32EL3P.js";import{a as h}from"./chunk-DPBAUEMX.js";import{a as l}from"./chunk-ZTBYLORY.js";import{a as c,b as r}from"./chunk-ITYTTWZA.js";import{d}from"./chunk-NKHZ5Y4Q.js";d();function m(n){let p=r.dispatch;(async()=>{try{await p(c())}catch(i){console.error("Error fetching slider data:",i)}})(),r.subscribe(()=>{let e=r.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}x(e)}),n.innerHTML=`
         <div class='hero-section'>
             <h2><span>Pot</span>session <span>in Tuao<span></h2>
             <p>Cagayan</p> 

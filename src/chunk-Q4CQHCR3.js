@@ -1,4 +1,4 @@
-import{d as i}from"./chunk-WEUAS4CC.js";i();function l(o,e){e.innerHTML=`
+import{d as i}from"./chunk-NKHZ5Y4Q.js";i();function l(o,e){e.innerHTML=`
         <div class='auth'>
             <h1>Verifying<span id="dots"></span></h1>
         </div>
