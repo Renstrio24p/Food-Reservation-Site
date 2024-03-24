@@ -3,7 +3,8 @@
     --category: url('/chixsilog.jpg');
     --soup: url('/soup6.avif');
     --pizza: url('/pizza-bg.avif');
-    --dessert: url('/halohalo-gb.avif')
+    --dessert: url('/halohalo-gb.avif');
+    --drinks: url('/drinks.webp');
 }
 
 .category-set {
@@ -146,19 +147,24 @@
     border-radius: 5px;
 }
 
+.hero-category-section {
+    margin-top: 1rem;
+}
+
 .hero-category-section.pizza {
     background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.82) 20%, rgba(0,0,0,0.2) 55%),var(--pizza);
-    margin-top: 1rem;
 }
 
 .hero-category-section.soups {
     background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.82) 20%, rgba(0,0,0,0.2) 55%),var(--soup);
-    margin-top: 1rem;
 }
 
 .hero-category-section.desserts {
     background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.82) 20%, rgba(0,0,0,0.2) 55%),var(--dessert);
-    margin-top: 1rem;
+}
+
+.hero-category-section.drinks {
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.82) 20%, rgba(0,0,0,0.2) 55%),var(--drinks);
 }
 
 /* Media Queries */

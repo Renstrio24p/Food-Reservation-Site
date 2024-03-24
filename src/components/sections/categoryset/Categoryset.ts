@@ -103,6 +103,18 @@ export default function CategorySet(DOM: HTMLDivElement) {
                         ${generateCards(filterByCategory('desserts'))}
                     </div>
                 </div>
+                <div class='hero-category-section drinks'>
+                    <div>
+                        <h1>Drinks</h1>
+                        <p>Soothing Drinks</p>
+                    </div>
+                </div>
+                <div class='category-section drinks'>
+                    <h2>Drinks</h2>
+                    <div class='category-menu'>
+                        ${generateCards(filterByCategory('drinks'))}
+                    </div>
+                </div>
             </div>
         `);
 

@@ -1,5 +1,5 @@
 import { createSlice, configureStore, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 export type SliderType = {
     image: string,
@@ -24,12 +24,16 @@ const initialState: States = {
     error: null,
 };
 
+const axiosInstance: AxiosInstance = axios.create({
+    baseURL: 'http://localhost:4000',
+});
+
 // Define async thunk to fetch slider data
 export const fetchSliderData = createAsyncThunk(
     'slider/fetchSliderData',
     async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/getall?type=posts');
+            const response = await axiosInstance.get('/api/getall?type=posts');
             return response.data.posts; 
         } catch (error) {
             throw new Error('Error fetching slider data');
