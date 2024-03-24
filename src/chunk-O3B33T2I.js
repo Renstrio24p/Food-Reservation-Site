@@ -1,17 +1,17 @@
-import{a as x,b as o}from"./chunk-ITYTTWZA.js";import{d as m}from"./chunk-NKHZ5Y4Q.js";m();function k(d){let y=o.dispatch;(async()=>{try{await y(x())}catch(g){console.error("Error fetching slider data:",g)}})(),o.subscribe(()=>{let r=o.getState().slider.sliderData;if(!Array.isArray(r)){console.error("Slider data is not an array:",r);return}let i=e=>r.filter(t=>t.collection===e),a=e=>e.map((t,s)=>`
-                    <div key=${s} class='collection-card'>
+import{a as x}from"./chunk-ZKEGY7US.js";import{a as y,b as n}from"./chunk-ITYTTWZA.js";import{d as v}from"./chunk-NKHZ5Y4Q.js";v();function S(l){let f=n.dispatch;(async()=>{try{await f(y())}catch(g){console.error("Error fetching slider data:",g)}})(),n.subscribe(()=>{let r=n.getState().slider.sliderData;if(!Array.isArray(r)){console.error("Slider data is not an array:",r);return}let b=t=>{let e=r.find(i=>i._id===t);if(e){let i=document.createElement("div");i.classList.add("modal"),document.body.appendChild(i),x(i,e)}},a=t=>r.filter(e=>e.collection===t),o=t=>t.map((e,i)=>`
+                    <div key=${i} class='collection-card' id=${i}>
                         <div class='collection-image'>
-                            <img src='${t.image}' alt='collection' />
+                            <img src='${e.image}' alt='collection' />
                         </div>
                         <div class='card-details'>
                             <div class='details'>
-                                <h3>${t.title}</h3>
-                                <p>Flavors: ${t.flavors?t.flavors.join(", "):""}</p>
+                                <h3>${e.title}</h3>
+                                <p>Flavors: ${e.flavors?e.flavors.join(", "):""}</p>
                             </div>
-                            <button>Add To Cart</button>
+                            <input type='button' id='button-${i}' value='Add To Cart' data-id='${e._id}'>
                         </div>
                     </div>
-                `).join("");d.innerHTML=`
+                `).join("");l.innerHTML=`
             <div>
                 <div class='nav-category'>
                     <button id='appetizers' class='active'>Appetizers</button>
@@ -29,7 +29,7 @@ import{a as x,b as o}from"./chunk-ITYTTWZA.js";import{d as m}from"./chunk-NKHZ5Y
                 <div class='category-section appetizers'>
                     <h2>Appetizers</h2>
                     <div class='category-menu'>
-                        ${a(i("appetizer"))}
+                        ${o(a("appetizer"))}
                     </div>
                 </div>
                 <div class='hero-category-section soups'>
@@ -41,7 +41,7 @@ import{a as x,b as o}from"./chunk-ITYTTWZA.js";import{d as m}from"./chunk-NKHZ5Y
                 <div class='category-section soups'>
                     <h2>Soups</h2>
                     <div class='category-menu'>
-                        ${a(i("soup"))}
+                        ${o(a("soup"))}
                     </div>
                 </div>
                 <div class='hero-category-section pizza'>
@@ -53,7 +53,7 @@ import{a as x,b as o}from"./chunk-ITYTTWZA.js";import{d as m}from"./chunk-NKHZ5Y
                 <div class='category-section pizza'>
                     <h2>Pizza</h2>
                     <div class='category-menu'>
-                        ${a(i("pizza"))}
+                        ${o(a("pizza"))}
                     </div>
                 </div>
                 <div class='hero-category-section desserts'>
@@ -65,7 +65,7 @@ import{a as x,b as o}from"./chunk-ITYTTWZA.js";import{d as m}from"./chunk-NKHZ5Y
                 <div class='category-section desserts'>
                     <h2>Desserts</h2>
                     <div class='category-menu'>
-                        ${a(i("desserts"))}
+                        ${o(a("desserts"))}
                     </div>
                 </div>
                 <div class='hero-category-section drinks'>
@@ -77,8 +77,8 @@ import{a as x,b as o}from"./chunk-ITYTTWZA.js";import{d as m}from"./chunk-NKHZ5Y
                 <div class='category-section drinks'>
                     <h2>Drinks</h2>
                     <div class='category-menu'>
-                        ${a(i("drinks"))}
+                        ${o(a("drinks"))}
                     </div>
                 </div>
             </div>
-        `,d.addEventListener("click",e=>{let t=e.target;if(t.tagName==="BUTTON"){let s=t.id,l=document.querySelector(`.hero-category-section.${s}`);if(l){let b=l.getBoundingClientRect(),n=window.pageYOffset,z=n+b.top,p=1e3,c=null,u=h=>{c||(c=h);let v=h-c,w=f(Math.min(v/p,1));window.scrollTo(0,n+w*(z-n)),v<p&&window.requestAnimationFrame(u)};window.requestAnimationFrame(u)}}});let f=e=>e<.5?2*e*e:-1+(4-2*e)*e;window.addEventListener("scroll",()=>{let e=document.querySelector(".nav-category");window.pageYOffset>50?e.classList.add("fixed"):e.classList.remove("fixed")})})}export{k as a};
+        `,l.addEventListener("click",t=>{let e=t.target;if(e.tagName==="INPUT"&&e.getAttribute("type")==="button"){let i=e.getAttribute("data-id");b(i)}else if(e.tagName==="BUTTON"){let i=e.id,p=document.querySelector(`.hero-category-section.${i}`);if(p){let w=p.getBoundingClientRect(),c=window.pageYOffset,k=c+w.top,u=1e3,d=null,h=s=>{d||(d=s);let m=s-d,D=z(Math.min(m/u,1));window.scrollTo(0,c+D*(k-c)),m<u&&window.requestAnimationFrame(h)};window.requestAnimationFrame(h),document.querySelectorAll(".nav-category button").forEach(s=>s.classList.remove("active")),e.classList.add("active")}}});let z=t=>t<.5?2*t*t:-1+(4-2*t)*t;window.addEventListener("scroll",()=>{let t=document.querySelector(".nav-category");window.pageYOffset>50?t.classList.add("fixed"):t.classList.remove("fixed")})})}export{S as a};
