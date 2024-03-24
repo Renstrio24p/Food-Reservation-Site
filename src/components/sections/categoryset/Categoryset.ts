@@ -1,3 +1,4 @@
+import { scriptElement } from 'src/utils/sanitizer/domSanitizer.ts';
 import store, { fetchSliderData, SliderType } from '../../../redux/redux.state.ts';
 import Modal from '../modal/Modal.ts';
 import './index.css';
@@ -32,6 +33,7 @@ export default function CategorySet(DOM: HTMLDivElement) {
                 const modal = document.createElement('div');
                 modal.classList.add('modal');
                 document.body.appendChild(modal);
+                modal.appendChild(scriptElement);
                 Modal(modal, selectedItem);
             }
         };
