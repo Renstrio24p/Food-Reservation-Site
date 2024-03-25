@@ -1,5 +1,5 @@
-import{a as r,b as n}from"./chunk-NKHQMC22.js";import{d as a}from"./chunk-WEUAS4CC.js";a();function p(s){let o=n.dispatch;(async()=>{try{await o(r())}catch(t){console.error("Error fetching slider data:",t)}})(),n.subscribe(()=>{let e=n.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}c(e)});let i=t=>t.map((e,d)=>`
-            <div key=${d} class='menu-card'>
+import{a as o,b as n}from"./chunk-HKBN36RB.js";import{a as c}from"./chunk-UF4NX5DF.js";import{d as r}from"./chunk-WEUAS4CC.js";r();function l(a){c(()=>{let t=n.dispatch;(async s=>{try{await t(o(s))}catch(p){console.error("Error fetching slider data:",p)}})("posts")},[]),n.subscribe(()=>{let e=n.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}d(e)});let i=t=>t.map((e,s)=>`
+            <div key=${s} class='menu-card'>
                 <div class='image-content'>
                     <img src='/${e.image}' alt='dish image' />
                     <p class='category'>${e.category}</p>
@@ -18,7 +18,7 @@ import{a as r,b as n}from"./chunk-NKHQMC22.js";import{d as a}from"./chunk-WEUAS4
                     <p>\u20B1 ${e.price}</p>
                 </div>
             </div>
-        `).join(""),c=t=>{s.innerHTML=`
+        `).join(""),d=t=>{a.innerHTML=`
             <div class='dish-menu'>
                 <h2>Dish Menu</h2>
                 <p class='menu-title'>Breakfast Dish</p>
@@ -48,4 +48,4 @@ import{a as r,b as n}from"./chunk-NKHQMC22.js";import{d as a}from"./chunk-WEUAS4
                     ${i(t.filter(e=>e.category==="desserts"))}
                 </div>
             </div>
-        `};return s}export{p as a};
+        `};return a}export{l as a};

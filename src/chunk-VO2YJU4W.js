@@ -1,4 +1,4 @@
-import{a as t}from"./chunk-XHPH453U.js";import{a as s}from"./chunk-A6EPWYUF.js";import{d as n}from"./chunk-WEUAS4CC.js";n();function o(e){e.innerHTML=`
+import{a as s}from"./chunk-OY3QVSBG.js";import{a as t}from"./chunk-XHPH453U.js";import{d as n}from"./chunk-WEUAS4CC.js";n();function o(e){e.innerHTML=`
     <div class='menu-hero-section'>
         <div class='menu-left'>
             <p class='recommend'>Our Favorite Dish</p>

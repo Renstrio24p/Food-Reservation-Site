@@ -1,4 +1,4 @@
-import{a as d,b as s}from"./chunk-NKHQMC22.js";import{d as c}from"./chunk-WEUAS4CC.js";c();function h(r){let l=s.dispatch;(async()=>{try{await l(d())}catch(t){console.error("Error fetching slider data:",t)}})(),s.subscribe(()=>{let e=s.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}a(e)}),r.innerHTML=`
+import{a as d,b as s}from"./chunk-HKBN36RB.js";import{a as l}from"./chunk-UF4NX5DF.js";import{d as c}from"./chunk-WEUAS4CC.js";c();function m(r){l(()=>{let t=s.dispatch;(async o=>{try{await t(d(o))}catch(i){console.error("Error fetching slider data:",i)}})("posts")},[]),s.subscribe(()=>{let e=s.getState().slider.sliderData;if(!Array.isArray(e)){console.error("Slider data is not an array:",e);return}a(e)}),r.innerHTML=`
         <h4>Categories</h4>
         <div class='options'>
             <button class='selected all'>All</button>
@@ -27,4 +27,4 @@ import{a as d,b as s}from"./chunk-NKHQMC22.js";import{d as c}from"./chunk-WEUAS4
                     <i class='bx bx-x'></i>
                 </div>
             </div>
-        `).join(""),e.style.scrollBehavior="smooth"},p=(t,e)=>{let o=e.filter(i=>i.category===t);a(o)},n=document.querySelectorAll("button");n.forEach(t=>{t.addEventListener("click",()=>{n.forEach(x=>x.classList.remove("selected")),t.classList.add("selected");let e=t.textContent.toLowerCase(),i=s.getState().slider.sliderData;e==="all"?a(i):p(e,i)})});let f=document.getElementById("slide-left"),g=document.getElementById("slide-right");f.onclick=()=>{let t=r.querySelector(".cards-container");t.scrollLeft-=100},g.onclick=()=>{let t=r.querySelector(".cards-container");t.scrollLeft+=100}}export{h as a};
+        `).join(""),e.style.scrollBehavior="smooth"},p=(t,e)=>{let o=e.filter(i=>i.category===t);a(o)},n=document.querySelectorAll("button");n.forEach(t=>{t.addEventListener("click",()=>{n.forEach(x=>x.classList.remove("selected")),t.classList.add("selected");let e=t.textContent.toLowerCase(),i=s.getState().slider.sliderData;e==="all"?a(i):p(e,i)})});let f=document.getElementById("slide-left"),g=document.getElementById("slide-right");f.onclick=()=>{let t=r.querySelector(".cards-container");t.scrollLeft-=100},g.onclick=()=>{let t=r.querySelector(".cards-container");t.scrollLeft+=100}}export{m as a};

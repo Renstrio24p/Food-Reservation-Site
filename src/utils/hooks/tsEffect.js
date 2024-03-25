@@ -1,1 +1,1 @@
-import{d as n}from"../../chunk-WEUAS4CC.js";n();function r(t,f){return t(),f.forEach(e=>{window.addEventListener(e,t)}),()=>{f.forEach(e=>{window.removeEventListener(e,t)})}}export{r as tsEffect};
+import{a}from"../../chunk-UF4NX5DF.js";import"../../chunk-WEUAS4CC.js";export{a as tsEffect};
