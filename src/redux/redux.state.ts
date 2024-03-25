@@ -32,9 +32,9 @@ const axiosInstance: AxiosInstance = axios.create({
 // Define async thunk to fetch slider data
 export const fetchSliderData = createAsyncThunk(
     'slider/fetchSliderData',
-    async () => {
+    async (type: string) => {
         try {
-            const response = await axiosInstance.get('/api/getall?type=posts');
+            const response = await axiosInstance.get(`/api/getall?type=${type}`);
             return response.data.posts; 
         } catch (error) {
             throw new Error('Error fetching slider data');

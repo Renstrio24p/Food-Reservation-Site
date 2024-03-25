@@ -15,6 +15,7 @@ const EsbuildOptions = {
     bundle: true,
     minify: true,
     splitting: true,
+    logLimit: 10,
     format: 'esm',
     chunkNames: 'src/[name]-[hash]',
     // sourcemap: true,

@@ -6,19 +6,23 @@ import store from 'src/redux/redux.state.ts';
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import './index.css';
+import { tsEffect } from 'src/utils/hooks/tsEffect.ts';
 
 export default function Home(DOM: HTMLDivElement) {
-    const dispatch = store.dispatch;
 
-    const fetchData = async () => {
-        try {
-            await dispatch(fetchSliderData());
-        } catch (error) {
-            console.error('Error fetching slider data:', error);
-        }
-    };
+    tsEffect(() => {
+        const dispatch = store.dispatch;
 
-    fetchData();
+        const fetchData = async (type: string) => {
+            try {
+                await dispatch(fetchSliderData(type));
+            } catch (error) {
+                console.error('Error fetching slider data:', error);
+            }
+        };
+
+        fetchData('posts');
+    }, [])
 
     store.subscribe(() => {
         const state = store.getState();

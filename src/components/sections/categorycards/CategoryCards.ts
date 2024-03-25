@@ -1,21 +1,26 @@
 import { SliderType } from 'src/components/data/Data.ts';
 import store, { fetchSliderData } from '../../../redux/redux.state.ts';
 import './index.css';
+import { tsEffect } from 'src/utils/hooks/tsEffect.ts';
 
 export default function categorycards(DOM: HTMLDivElement) {
-   
-    const dispatch = store.dispatch;
 
-    const fetchData = async () => {
-        try {
-            await dispatch(fetchSliderData());
-        } catch (error) {
-            console.error('Error fetching slider data:', error);
-        }
-    };
-
-    fetchData();
     
+    tsEffect(() => {
+        const dispatch = store.dispatch;
+
+        const fetchData = async (type: string) => {
+            try {
+                await dispatch(fetchSliderData(type));
+            } catch (error) {
+                console.error('Error fetching slider data:', error);
+            }
+        };
+
+        fetchData('posts');
+
+    }, [])
+
     store.subscribe(() => {
         const state = store.getState();
         const sliderData = state.slider.sliderData;
@@ -62,7 +67,7 @@ export default function categorycards(DOM: HTMLDivElement) {
                 </div>
             </div>
         `).join('');
-        cardsContainer.style.scrollBehavior = 'smooth'; 
+        cardsContainer.style.scrollBehavior = 'smooth';
     };
 
     const filterData = (category: string, sliderData: SliderType) => {
