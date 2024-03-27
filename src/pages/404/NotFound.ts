@@ -1,7 +1,10 @@
 
 import './index.css'
+import { User } from 'src/components/types/User.ts';
 
-export default function NotFound(DOM: HTMLDivElement) {
+export default function NotFound(DOM: HTMLDivElement,user: User) {
+
+  const username = user ? user.username : 'Guest'
 
   DOM.innerHTML = (`
     <div class='notfound'>
@@ -12,7 +15,7 @@ export default function NotFound(DOM: HTMLDivElement) {
           </div>
           <div class='notfound-right'>
             <h1>404 Not Found</h1>
-            <p>It seems you've lost please return <a href='/'>Home</a></p>
+            <p> Hi ${username} It seems you've lost please return <a href='/'>Home</a></p>
           </div>
        </div>
     </div>

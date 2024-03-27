@@ -1,9 +1,9 @@
 :root {
-    --category: url('/chixsilog.jpg');
-    --soup: url('/soup6.avif');
-    --pizza: url('/pizza-bg.avif');
-    --dessert: url('/halohalo-gb.avif');
-    --drinks: url('/drinks.webp')
+    --category: url('http://localhost:4000/api/upload/image/a572c779b707e645afc2dcdd9625154e.jpg');
+    --soup: url('http://localhost:4000/api/upload/image/9a7848954a1fd0cd562ec941f1b0ff1f.avif');
+    --pizza: url('http://localhost:4000/api/upload/image/ecbfe220bb31ebcb43301e3fb3728009.avif');
+    --dessert: url('http://localhost:4000/api/upload/image/96b0fab8ec3f1f9aeb743166dda2f657.avif');
+    --drinks: url('http://localhost:4000/api/upload/image/710440359473d57b6d10a440e2547f44.webp')
 }
 
 .category-set {
@@ -46,7 +46,7 @@
 
 .nav-category.fixed {
     position: fixed;
-    top: 5.2rem;
+    top: 15%;
     z-index: 999;
     background-color: #fff;
     max-width: 66%;
@@ -216,9 +216,9 @@
         font-size: 20px
     }
 
-    .card-details button {
+    .card-details .add-btn {
         position: absolute;
-        bottom: 10px;
+        bottom: 1%;
         width: 93%;
         left: 2%;
         right: 2%;

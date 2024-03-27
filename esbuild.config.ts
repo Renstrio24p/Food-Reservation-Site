@@ -10,7 +10,7 @@ const Server = () => {
 };
 
 const EsbuildOptions = {
-    entryPoints: ['src/index.ts','src/**/*.ts', 'index.html'],
+    entryPoints: ['src/index.ts', 'index.html'],
     outdir: 'dist',
     bundle: true,
     minify: true,

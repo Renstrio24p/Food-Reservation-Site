@@ -10,20 +10,22 @@ import Contact from "src/pages/Contact/Contact.ts";
 import { isAuthenticated } from "src/pages/auth/Authentication/isAuthenticated.ts";
 import Cart from "src/pages/auth/pages/cart/Cart.ts";
 import NotFound from "src/pages/404/NotFound.ts";
+import { SliderType, UserType } from "src/redux/redux.state.ts";
+import { User } from "src/components/types/User.ts";
 
-export const Routes = (DOM: HTMLDivElement) => {
+export const Routes = (DOM: HTMLDivElement,user: User,posts: SliderType,allusers: UserType) => {
     const router = new TSRouter([
         {
             path: '/',
-            element: ()=> Home(DOM!),
+            element: ()=> Home(DOM!,posts),
         },
         {
             path: '/menu',
-            element: ()=> Menu(DOM),
+            element: ()=> Menu(DOM,posts),
         },
         {
             path: '/category',
-            element: ()=> Category(DOM),
+            element: ()=> Category(DOM,posts),
         },
         {
             path: '/aboutus',
@@ -47,7 +49,7 @@ export const Routes = (DOM: HTMLDivElement) => {
         },
         {
             path: '*',
-            element: ()=> NotFound(DOM)
+            element: ()=> NotFound(DOM,user)
         }
     ])
     router.navigate("")

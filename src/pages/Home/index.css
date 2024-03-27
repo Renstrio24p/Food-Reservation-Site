@@ -105,6 +105,15 @@
     border: none
 }
 
+.home-content {
+    padding: 6%;
+    width: 100%;
+}
+
+.home-content .swiper-container{
+    margin-bottom: 2rem;
+}
+
 .slider {
     padding: 5% 6%;
     display: flex;
@@ -130,6 +139,8 @@
     margin-left: 2rem
 }
 
+
+
 .slider-slides {
     display: flex;
     align-items: center;
@@ -152,7 +163,7 @@
     display: flex;
     gap: 60px;
     flex-wrap: nowrap;
-    scroll-snap-type: x mandatory
+    scroll-snap-type: x mandatory;
 }
 
 .card {
@@ -175,6 +186,15 @@
 .card .info {
     padding: 5% 6%;
     z-index: 99
+}
+
+.card .info h3 {
+    font-size: 14px;
+    font-weight: 500
+}
+
+.card .info p {
+    font-size: 12px;
 }
 
 .card .info i {
@@ -208,7 +228,7 @@
 }
 
 .card p {
-    font-size: 14px
+    font-size: 11px
 }
 
 @media screen and (min-width:1920px) {

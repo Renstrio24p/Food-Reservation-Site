@@ -1,62 +1,16 @@
 import { SliderType } from 'src/components/data/Data.ts';
-import store, { fetchSliderData } from '../../../redux/redux.state.ts';
 import './index.css';
-import { tsEffect } from 'src/utils/hooks/tsEffect.ts';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 
-export default function categorycards(DOM: HTMLDivElement) {
-
+export default function categorycards(DOM: HTMLDivElement, posts: SliderType) {
+    let swiper: Swiper;
     
-    tsEffect(() => {
-        const dispatch = store.dispatch;
-
-        const fetchData = async (type: string) => {
-            try {
-                await dispatch(fetchSliderData(type));
-            } catch (error) {
-                console.error('Error fetching slider data:', error);
-            }
-        };
-
-        fetchData('posts');
-
-    }, [])
-
-    store.subscribe(() => {
-        const state = store.getState();
-        const sliderData = state.slider.sliderData;
-
-        if (!Array.isArray(sliderData)) {
-            console.error('Slider data is not an array:', sliderData);
-            return;
-        }
-
-        renderCards(sliderData);
-    });
-
-    DOM.innerHTML = (`
-        <h4>Categories</h4>
-        <div class='options'>
-            <button class='selected all'>All</button>
-            <button>Desserts</button>
-            <button>Breakfast</button>
-            <button>Lunch</button>
-            <button>Dinner</button>
-        </div>
-        <div class='slider categories'>
-            <i class='bx bx-chevron-left' id='slide-left'></i>
-            <div class='slider-slides'> 
-                <div class='cards-container'></div>
-            </div>
-            <i class='bx bx-chevron-right' id='slide-right'></i>
-        </div>
-    `);
-
     const renderCards = (data: SliderType) => {
-        const cardsContainer = DOM.querySelector('.cards-container') as HTMLDivElement;
-        cardsContainer.innerHTML = data.map((item, id) => `
-            <div key='${id}' class='card'>
+        return data.map((item, id) => `
+            <div key='${id}' class='swiper-slide card'>
                 <div class='food-img'>
-                    <img src='/${item.image}' alt='food image' />
+                    <img src='${item.image}' alt='food image' />
                     <p class='item-category'>${item.category}</p>
                 </div>
                 <div class='info'>
@@ -67,41 +21,73 @@ export default function categorycards(DOM: HTMLDivElement) {
                 </div>
             </div>
         `).join('');
-        cardsContainer.style.scrollBehavior = 'smooth';
     };
 
-    const filterData = (category: string, sliderData: SliderType) => {
-        const filteredData = sliderData.filter(item => item.category === category);
-        renderCards(filteredData);
+    const updateSwiperSlides = (data: SliderType) => {
+        const swiperWrapper = DOM.querySelector('.swiper-wrapper') as HTMLElement;
+        swiperWrapper.innerHTML = renderCards(data);
+        swiper.update(); 
     };
 
-    const selectBtn = document.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
+    const filterData = (category: string) => {
+        const filteredData = category === 'all' ? posts : posts.filter(item => item.category.toLowerCase() === category);
+        updateSwiperSlides(filteredData);
+    };
 
-    selectBtn.forEach(button => {
+    DOM.innerHTML = (`
+        <h4>Categories</h4>
+        <div class='options'>
+            <button class='selected all'>All</button>
+            <button>Desserts</button>
+            <button>Breakfast</button>
+            <button>Lunch</button>
+            <button>Dinner</button>
+        </div>
+        <div class='swiper-container'>
+            <div class="swiper-wrapper">
+                ${renderCards(posts)}
+            </div>
+            <div class='swiper-button-prev prev'></div>
+            <div class='swiper-button-next next'></div>
+        </div>
+    `);
+
+    const swiperContainer = DOM.querySelector('.swiper-container') as HTMLElement;
+    swiper = new Swiper(swiperContainer, {
+            initialSlide: 0,
+            centeredSlides: true,
+            loop: true, 
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 4,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+    });
+
+    const selectBtns = document.querySelectorAll('.options button');
+
+    selectBtns.forEach(button => {
         button.addEventListener('click', () => {
-            selectBtn.forEach(btn => btn.classList.remove('selected'));
+            selectBtns.forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
             const category = button.textContent!.toLowerCase();
-            const state = store.getState();
-            const sliderData = state.slider.sliderData;
-            if (category === 'all') {
-                renderCards(sliderData);
-            } else {
-                filterData(category, sliderData);
-            }
+            filterData(category);
         });
     });
 
-    const slideLeft = document.getElementById('slide-left') as HTMLElement;
-    const slideRight = document.getElementById('slide-right') as HTMLElement;
+    // Move left or right functionality
+    const moveLeft = () => swiper.slidePrev();
+    const moveRight = () => swiper.slideNext();
 
-    slideLeft.onclick = () => {
-        const cardsContainer = DOM.querySelector('.cards-container') as HTMLElement;
-        cardsContainer.scrollLeft -= 100;
-    };
+    const prevButton = DOM.querySelector('.swiper-button-prev') as HTMLElement;
+    const nextButton = DOM.querySelector('.swiper-button-next') as HTMLElement;
 
-    slideRight.onclick = () => {
-        const cardsContainer = DOM.querySelector('.cards-container') as HTMLElement;
-        cardsContainer.scrollLeft += 100;
-    };
+    prevButton.addEventListener('click', moveLeft);
+    nextButton.addEventListener('click', moveRight);
+
+    swiper.update();
 }
