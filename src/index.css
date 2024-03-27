@@ -19,3 +19,8 @@ body {
     height: fit-content;
     scroll-behavior: smooth;
 }
+
+.gap-0 {
+    gap: 0;
+    margin-right: 0;
+}
