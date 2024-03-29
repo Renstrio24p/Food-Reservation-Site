@@ -2,6 +2,7 @@ type RouteCallback = (errorElement?: HTMLElement) => void;
 
 interface RouteConfig {
   path: string;
+  routeto?: string; // New property for redirection
   element: RouteCallback;
   errorElement?: RouteCallback;
   children?: RouteConfig[];
@@ -22,6 +23,11 @@ export class TSRouter {
     const matchingRoute = this.findMatchingRoute(currentPath, this.routes);
 
     if (matchingRoute) {
+      if (matchingRoute.routeto) {
+        this.navigate(matchingRoute.routeto);
+        return;
+      }
+
       const errorElement = document.createElement('div');
       matchingRoute.element(errorElement);
 
@@ -41,10 +47,20 @@ export class TSRouter {
     }
   }
 
-  private renderChildren(children: RouteConfig[], nestedPath: string, parentElement: HTMLElement) {
+  private renderChildren(children: RouteConfig[] | undefined, nestedPath: string, parentElement: HTMLElement) {
+    if (!children || children.length === 0) {
+      // If no children or empty children array, remove any existing child element
+      const childElement = parentElement.querySelector('#child') as HTMLDivElement;
+      if (childElement) {
+        childElement.remove();
+      }
+      return;
+    }
+
     const matchingChild = this.findMatchingRoute(nestedPath, children);
     if (matchingChild) {
       const childElement = document.createElement('div');
+      childElement.id = 'child'; // Assign id to the child element
       matchingChild.element(childElement);
       parentElement.appendChild(childElement);
 
@@ -98,5 +114,9 @@ export class TSRouter {
   navigate(path: string) {
     history.pushState(null, '', path); 
     this.handlePopState(); 
+  }
+
+  addRoute(route: RouteConfig) {
+    this.routes.push(route);
   }
 }
